@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::resource('accpengajuan','AccpengajuanController');
+Route::resource('hasiltest','HasiltestController');
+Route::resource('requestpengajuan','RequestpengajuanController');
+Route::resource('suratlamaran','SuratlamaranController');

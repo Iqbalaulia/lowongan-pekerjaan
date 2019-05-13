@@ -1,0 +1,29 @@
+.action ul{
+    padding-left: 0;
+    margin: auto;
+}
+.action  ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.background{
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    padding: 2%;
+}
+
+.background .kategori{
+    width: 100%;
+}
+
+.button-box{
+    width: 100%;
+    height: auto;
+}
+
+.button-box a{
+float: right;
+width: 33%;    
+}
