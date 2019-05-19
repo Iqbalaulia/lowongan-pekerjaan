@@ -9,7 +9,7 @@
 <table id="accpengajuan" class="table table-striped table-bordered bg-white" style="width:100%">
     <thead>
         <tr>
-            <th>Nama Pelamar</th>
+            <th>Nama Pelamar tes</th>
             <th>Hasil Test</th>
             <th>Posisi</th>
             <th>Action</th>
