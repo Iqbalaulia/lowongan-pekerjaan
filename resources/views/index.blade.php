@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @include('include.header-css')
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="h-100">

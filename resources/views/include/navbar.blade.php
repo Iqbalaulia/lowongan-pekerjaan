@@ -57,7 +57,15 @@
             <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="user-avatar rounded-circle mr-2" src="{{URL::asset('images/0.jpg')}}" alt="User Avatar">
-                <span class="d-none d-md-inline-block">M iqbal aulia rafi</span>
+                @guest
+                           
+                            @if (Route::has('register'))
+                               
+                            @endif
+                        @else
+                <span class="d-none d-md-inline-block">{{ Auth::user()->name }}</span>
+
+                @endguest
                 <!-- before -->
                
 
@@ -70,14 +78,16 @@
                 <a class="dropdown-item" href="add-new-post.html">
                     <i class="material-icons">note_add</i> Add New Post</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="" onclick="event.preventDefault();
+                
+                <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
-                    <i class="material-icons text-danger">&#xE879;</i> Logout </a>
-                <form id="logout-form" action="" method="POST" style="display: none;">
+                    <i class="material-icons text-danger">&#xE879;</i> {{ __('Logout') }} </a>
 
-              
-                </form>
+                
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
             </div>
         </li>
         
