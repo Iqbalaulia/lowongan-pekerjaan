@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pelamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input; 
 
 class PelamarController extends Controller
 {
@@ -35,7 +36,15 @@ class PelamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $postPelamar = new\App\Pelamar();
+        $postPelamar->nama_lengkap    =   $request->nama_lengkap;
+        $postPelamar->keahlian  =   $request->keahlian;
+        $postPelamar->linkedin  =   $request->linkedin;
+        $postPelamar->github    =   $request->github;
+        $postPelamar->gitlab    =   $request->gitlab;
+        $postPelamar->divisi_lamaran    = $request->divisi_lamaran;
+        $postPelamar->save();
+        return redirect('pelamar');
     }
 
     /**
