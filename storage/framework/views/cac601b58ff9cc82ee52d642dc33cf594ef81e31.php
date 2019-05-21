@@ -11,11 +11,15 @@
             <th>Nama Pelamar</th>
             <th>Keahlian</th>
             <th>link Portofolio</th>
+            <th>Divisi</th>
+            <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -41,6 +45,8 @@
         <th>Nama Pelamar</th>
             <th>Keahlian</th>
             <th>link Portofolio</th>
+            <th>Divisi</th>
+            <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
     </tfoot>

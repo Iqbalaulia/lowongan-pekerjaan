@@ -19,7 +19,7 @@ Route::resource('accpengajuan','AccpengajuanController');
 Route::resource('hasiltest','HasiltestController');
 Route::resource('requestpengajuan','RequestpengajuanController');
 Route::resource('suratlamaran','SuratlamaranController');
-
+Route::resource('pelamar','PelamarController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
