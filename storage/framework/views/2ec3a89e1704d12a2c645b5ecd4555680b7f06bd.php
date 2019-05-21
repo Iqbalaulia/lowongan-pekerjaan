@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <?php echo $__env->make('include.header-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+
+<!-- Scripts -->
+<script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 </head>
 
 <body class="h-100">

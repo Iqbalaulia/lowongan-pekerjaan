@@ -50,17 +50,24 @@
 
 
 
-     
-        
-        <li class="nav-item dropdown">
+        <?php if(auth()->guard()->guest()): ?>
 
-            <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button"
+<?php if(Route::has('login')): ?>
+<li class="nav-item mt-2 ml-2">
+    <a class="nav-link " href="<?php echo e(route('login')); ?>">
+        <i class="material-icons">
+            account_circle
+        </i>
+        <?php echo e(__('Login')); ?></a>
+</li>
+<?php endif; ?>
+<?php else: ?>
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="user-avatar rounded-circle mr-2" src="<?php echo e(URL::asset('images/0.jpg')); ?>" alt="User Avatar">
-                <span class="d-none d-md-inline-block">M iqbal aulia rafi</span>
-                <!-- before -->
-               
-
+                <span class="d-none d-md-inline-block"><?php echo e(Auth::user()->name); ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-small">
                 <a class="dropdown-item" href="user-profile-lite.html">
@@ -70,17 +77,20 @@
                 <a class="dropdown-item" href="add-new-post.html">
                     <i class="material-icons">note_add</i> Add New Post</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="" onclick="event.preventDefault();
+                
+                <a class="dropdown-item text-danger" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
-                    <i class="material-icons text-danger">&#xE879;</i> Logout </a>
-                <form id="logout-form" action="" method="POST" style="display: none;">
+                    <i class="material-icons text-danger">&#xE879;</i> <?php echo e(__('Logout')); ?> </a>
 
-              
-                </form>
+                
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field(); ?>
+                                    </form>
             </div>
         </li>
         
+        <?php endif; ?>
 
     </ul>
     <nav class="nav">
