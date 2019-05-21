@@ -15,13 +15,13 @@
                 <form class="kt-form kt-form--label-right" action="{{url('addnewpost')}}" method="POST">
                     {{csrf_field()}}
 
-                    <label for="judul">Divisi</label>
-                    <input name="judul" class="form-control form-control-lg mb-3" type="text"
-                        placeholder="Your Post Title">
-                    <label for="berita">Sebab pengajuan</label>
-                    <textarea name="berita" type="text" class="form-control form-control-lg mb-3"></textarea>
-                    <label for="judul">Jumlah yang dibutuhkan</label>
-                    <input name="judul" class="form-control form-control-lg mb-3" type="text"
+                    <label for="divisi">Divisi</label>
+                    <input name="divisi" class="form-control form-control-lg mb-3" type="text"
+                        placeholder="Masukan divisi yang hendak melakukan pembukaan pekerjaan">
+                    <label for="sebab_pengajuan">Sebab pengajuan</label>
+                    <textarea name="sebab_pengajuan" type="text" class="form-control form-control-lg mb-3"></textarea>
+                    <label for="jumlah">Jumlah yang dibutuhkan</label>
+                    <input name="jumlah" class="form-control form-control-lg mb-3" type="text"
                         placeholder="Your Post Title">
 
 
@@ -29,23 +29,23 @@
 
                         <div class="col-md-6">
 
-                            <label for="judul">Jangka waktu open recruitment</label>
-                            <input name="judul" class="form-control form-control-lg mb-3" type="date"
+                            <label for="pembukaan_rek">Jangka waktu open recruitment</label>
+                            <input name="pembukaan_rek" class="form-control form-control-lg mb-3" type="date"
                                 placeholder="Your Post Title">
                         </div>
 
                         <div class="col-md-6">
 
-                            <label for="judul">Penutupan open recruitment</label>
-                            <input name="judul" class="form-control form-control-lg mb-3" type="date"
+                            <label for="penutupan_rek">Penutupan open recruitment</label>
+                            <input name="penutupan_rek" class="form-control form-control-lg mb-3" type="date"
                                 placeholder="Your Post Title">
                         </div>
 
                     </div>
 
 
-                    <label for="judul">Pihak bertanggung jawab</label>
-                    <input name="judul" class="form-control form-control-lg mb-3" type="text"
+                    <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
+                    <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
                         placeholder="Your Post Title">
 
                     <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
