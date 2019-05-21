@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Pelamar;
+use App\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input; 
 use Illuminate\Support\Facades\Storage;
 
-class PelamarController extends Controller
+class FileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,8 @@ class PelamarController extends Controller
      */
     public function index()
     {
-        return view('pelamar.create');
+        return view('pelamar.upload');
+
     }
 
     /**
@@ -26,7 +26,7 @@ class PelamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('pelamar.upload');
     }
 
     /**
@@ -37,26 +37,29 @@ class PelamarController extends Controller
      */
     public function store(Request $request)
     {
-        $postPelamar = new\App\Pelamar();
-        $postPelamar->nama_lengkap    =   $request->nama_lengkap;
-        $postPelamar->keahlian  =   $request->keahlian;
-        $postPelamar->linkedin  =   $request->linkedin;
-        $postPelamar->github    =   $request->github;
-        $postPelamar->gitlab    =   $request->gitlab;
-        $postPelamar->divisi_lamaran    = $request->divisi_lamaran;
-        
        
-        $postPelamar->save();
-        return view('pelamar.upload');
+
+        $files = $request->file('file');
+        foreach($files as $file){
+            $name = $file->getClientOriginalName();
+            $path = $file->store('public/file');
+            File::create([
+                'name' => $name,
+                'size' => Storage::size($path),
+                'type' => pathinfo($path, PATHINFO_EXTENSION),
+                'path' => $path
+            ]);
+        }
+        return redirect('pelamar');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function show(Pelamar $pelamar)
+    public function show(File $file)
     {
         //
     }
@@ -64,10 +67,10 @@ class PelamarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pelamar $pelamar)
+    public function edit(File $file)
     {
         //
     }
@@ -76,10 +79,10 @@ class PelamarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pelamar $pelamar)
+    public function update(Request $request, File $file)
     {
         //
     }
@@ -87,10 +90,10 @@ class PelamarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pelamar  $pelamar
+     * @param  \App\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pelamar $pelamar)
+    public function destroy(File $file)
     {
         //
     }

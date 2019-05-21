@@ -20,6 +20,8 @@ Route::resource('hasiltest','HasiltestController');
 Route::resource('requestpengajuan','RequestpengajuanController');
 Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
+Route::resource('file', 'FileController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

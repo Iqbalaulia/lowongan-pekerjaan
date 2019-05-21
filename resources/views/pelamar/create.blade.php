@@ -54,9 +54,6 @@
                             <input name="divisi_lamaran" class="form-control form-control-lg mb-3" type="text"
                                 placeholder="Your Post Title">
 
-                                <label for="berkas_lamaran">Berkas Lamaran</label>
-                                <input name="berkas_lamaran[]" class="form-control form-control-lg mb-3" type="file" multiple
-                               >
                             <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                                 <i class="material-icons">file_copy</i> Daftarkan</button>
                                 
