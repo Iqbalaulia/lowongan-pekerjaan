@@ -9,30 +9,32 @@
     <thead>
         <tr>
             <th>Divisi</th>
-            <th>Sebab pengajuan</th>
             <th>Jumlah yang dibutuhkan</th>
-            <th>Jangkah waktu</th>
-            <th>Akhir waktu</th>
+            <th>Sebab pengajuan</th>
+          
+            <th>Pembukaan</th>
+            <th>Penutupan</th>
             <th>Pihak bertanggung jawab</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
+    <?php $__currentLoopData = $requestpengajuan_show; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $show_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php echo e($show_data->divisi); ?></td>
+            <td><?php echo e($show_data->jumlah); ?></td>
+            <td><?php echo e($show_data->sebab_pengajuan); ?></td>
+            <td><?php echo e($show_data->pembukaan_rek); ?></td>
+            <td><?php echo e($show_data->penutupan_rek); ?></td>
+            <td><?php echo e($show_data->pihak_bertanggungjwb); ?></td>
             
             <td width="15%">
                 <div class="action">
                     <ul>
-                        <li><a href="<?php echo e(url('requestpengajuan.edit')); ?>" class="btn btn-primary">Edit</a></li>
+                        <li><a href="<?php echo e(route('requestpengajuan.edit',[$show_data->id])); ?>" class="btn btn-primary">Edit</a></li>
                         <li>
                         
-                            <form action="" method="POST">
+                            <form action="<?php echo e(route('requestpengajuan.destroy',[$show_data->id])); ?>" method="POST">
                                 <input type="hidden" name="_method" value="Delete">
                                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                 <input type="submit" class="btn btn-danger" value="Delete">
@@ -42,14 +44,16 @@
                 </div>
             </td>
         </tr>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
     <tfoot>
         <tr>
         <th>Divisi</th>
+        <th>Jumlah yang dibutuhkan</th>
             <th>Sebab pengajuan</th>
-            <th>Jumlah yang dibutuhkan</th>
-            <th>Jangkah waktu</th>
-            <th>Akhir waktu</th>
+            
+            <th>Pembukaan</th>
+            <th>Penutupan</th>
             <th>Pihak bertanggung jawab</th>
             <th>Action</th>
         </tr>

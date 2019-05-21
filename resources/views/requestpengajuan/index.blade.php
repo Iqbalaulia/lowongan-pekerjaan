@@ -10,30 +10,32 @@
     <thead>
         <tr>
             <th>Divisi</th>
-            <th>Sebab pengajuan</th>
             <th>Jumlah yang dibutuhkan</th>
-            <th>Jangkah waktu</th>
-            <th>Akhir waktu</th>
+            <th>Sebab pengajuan</th>
+          
+            <th>Pembukaan</th>
+            <th>Penutupan</th>
             <th>Pihak bertanggung jawab</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
+    @foreach ($requestpengajuan_show as $show_data)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$show_data->divisi}}</td>
+            <td>{{$show_data->jumlah}}</td>
+            <td>{{$show_data->sebab_pengajuan}}</td>
+            <td>{{$show_data->pembukaan_rek}}</td>
+            <td>{{$show_data->penutupan_rek}}</td>
+            <td>{{$show_data->pihak_bertanggungjwb}}</td>
             
             <td width="15%">
                 <div class="action">
                     <ul>
-                        <li><a href="{{url('requestpengajuan.edit')}}" class="btn btn-primary">Edit</a></li>
+                        <li><a href="{{route('requestpengajuan.edit',[$show_data->id])}}" class="btn btn-primary">Edit</a></li>
                         <li>
                         
-                            <form action="" method="POST">
+                            <form action="{{route('requestpengajuan.destroy',[$show_data->id])}}" method="POST">
                                 <input type="hidden" name="_method" value="Delete">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" class="btn btn-danger" value="Delete">
@@ -43,14 +45,16 @@
                 </div>
             </td>
         </tr>
+        @endforeach
     </tbody>
     <tfoot>
         <tr>
         <th>Divisi</th>
+        <th>Jumlah yang dibutuhkan</th>
             <th>Sebab pengajuan</th>
-            <th>Jumlah yang dibutuhkan</th>
-            <th>Jangkah waktu</th>
-            <th>Akhir waktu</th>
+            
+            <th>Pembukaan</th>
+            <th>Penutupan</th>
             <th>Pihak bertanggung jawab</th>
             <th>Action</th>
         </tr>

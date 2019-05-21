@@ -7,6 +7,8 @@
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
@@ -15,6 +17,4 @@
     <script src="{{ asset('js/shards-dashboards.1.1.0.min.js') }}"></script>
     <script src="{{ asset('js/app/app-blog-overview.1.1.0.js') }}"></script>
     <script src="{{ asset('js/app/app-blog-new-post.1.1.0.js') }}"></script>
-<script src="{{ asset('js/datatable/accpengajuan.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/datatable/kategori-datatable.js')}}" type="text/javascript"></script>
-<script src="{{ asset('js/datatable/newpost-datatable.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/datatable/pengajuan.js')}}"></script>

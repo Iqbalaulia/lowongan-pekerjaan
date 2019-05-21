@@ -11,7 +11,7 @@
         <!-- Add New Post Form -->
         <div class="card card-small mb-3">
             <div class="card-body">
-                <form class="kt-form kt-form--label-right" action="<?php echo e(url('addnewpost')); ?>" method="POST">
+                <form class="kt-form kt-form--label-right" action="<?php echo e(url('requestpengajuan')); ?>" method="POST">
                     <?php echo e(csrf_field()); ?>
 
 
@@ -44,8 +44,8 @@
                     </div>
 
 
-                    <label for="pihak_bertanggungjwb	">Pihak bertanggung jawab</label>
-                    <input name="pihak_bertanggungjwb	" class="form-control form-control-lg mb-3" type="text"
+                    <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
+                    <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
                         placeholder="Your Post Title">
 
                     <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
@@ -66,5 +66,4 @@
 </div>
 <!-- End Content -->
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/aulia/laravel-project/lowongan-pekerjaan/resources/views/requestpengajuan/create.blade.php ENDPATH**/ ?>
