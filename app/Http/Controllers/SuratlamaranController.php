@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Suratlamaran;
+use App\File;
 use Illuminate\Http\Request;
 
 class SuratlamaranController extends Controller
@@ -18,7 +19,8 @@ class SuratlamaranController extends Controller
     }
     public function index()
     {
-        return view('suratlamaran.index');
+        $suratlamaran = Suratlamaran::all();
+        return view('suratlamaran.index',['suratlamaran'=>$suratlamaran]);
     }
 
     /**

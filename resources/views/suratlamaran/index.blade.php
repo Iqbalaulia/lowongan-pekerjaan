@@ -18,11 +18,12 @@
         </tr>
     </thead>
     <tbody>
+    @foreach ($suratlamaran as $lamaran)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$lamaran->nama_lengkap}}</td>
+            <td>{{$lamaran->keahlian}}</td>
+            <td>{{$lamaran->linkedin}}</td>
+            <td>{{$lamaran->divisi_lamaran}}</td>
             <td></td>
             <td width="15%">
                 <div class="action">
@@ -40,6 +41,7 @@
                 </div>
             </td>
         </tr>
+        @endforeach
     </tbody>
     <tfoot>
         <tr>
