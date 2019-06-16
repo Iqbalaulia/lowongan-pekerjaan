@@ -12,7 +12,9 @@
         </div>
         <div class="col-md-4">
             <div class="button-box mt-2">
-                <a href="<?php echo e(route('requestpengajuan.create')); ?>" class="btn btn-success"> Tambah data</a>
+
+                <a href="<?php echo e(route('requestpengajuan.create')); ?>" class="btn btn-success">
+                        <img src="https://img.icons8.com/wired/25/000000/plus.png"> Tambah data</a>
             </div>
         </div>
     </div>
@@ -46,14 +48,18 @@
                             <div class="action">
                                 <ul>
                                     <li><a href="<?php echo e(route('requestpengajuan.edit',[$show_data->id])); ?>"
-                                            class="btn btn-primary">Edit</a></li>
+                                            class="btn btn-primary">
+                                            <img src="https://img.icons8.com/wired/15/000000/edit.png"> 
+                                            Edit</a></li>
                                     <li>
 
                                         <form action="<?php echo e(route('requestpengajuan.destroy',[$show_data->id])); ?>"
                                             method="POST">
                                             <input type="hidden" name="_method" value="Delete">
                                             <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                            <button type="submit" class="btn btn-danger">
+                                                    <img src="https://img.icons8.com/wired/15/000000/trash.png">
+                                                    Delete</button>
                                         </form>
                                     </li>
                                 </ul>

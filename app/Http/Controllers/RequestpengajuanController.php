@@ -109,7 +109,7 @@ class RequestpengajuanController extends Controller
     public function destroy($id)
     {
         $data = Requestpengajuan::findOrFail($id);
-        $deleteRequest->delete();
+        $data->delete();
         return redirect()->route('requestpengajuan.index');
     }
 }
