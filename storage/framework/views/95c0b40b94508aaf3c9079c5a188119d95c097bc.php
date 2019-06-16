@@ -80,7 +80,6 @@
     </div>
     <?php echo $data->links(); ?>
 
-
 </div>
 
 <?php $__env->stopSection(); ?>

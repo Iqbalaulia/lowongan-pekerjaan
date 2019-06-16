@@ -13,18 +13,18 @@
         <!-- Add New Post Form -->
         <div class="card card-small mb-3">
             <div class="card-body">
-                <form class="kt-form kt-form--label-right" action="{{route('requestpengajuan.update',[$getRequest->id])}}" method="POST">
+                <form class="kt-form kt-form--label-right" action="{{route('requestpengajuan.update',[$data->id])}}" method="POST">
                     {{csrf_field()}}
                     {{ method_field('PUT') }} 
 
                     <label for="divisi">Divisi</label>
                     <input name="divisi" class="form-control form-control-lg mb-3" type="text"
-                       value="{{$getRequest->divisi}}">
+                       value="{{$data->divisi}}">
                     <label for="sebab_pengajuan">Sebab pengajuan</label>
-                    <textarea name="sebab_pengajuan" type="text" class="form-control form-control-lg mb-3">{{$getRequest->sebab_pengajuan}}</textarea>
+                    <textarea name="sebab_pengajuan" type="text" class="form-control form-control-lg mb-3">{{$data->sebab_pengajuan}}</textarea>
                     <label for="jumlah">Jumlah yang dibutuhkan</label>
                     <input name="jumlah" class="form-control form-control-lg mb-3" type="text"
-                        value="{{$getRequest->jumlah}}">
+                        value="{{$data->jumlah}}">
 
 
                     <div class="row">
@@ -33,14 +33,14 @@
 
                             <label for="pembukaan_rek">Jangka waktu open recruitment</label>
                             <input name="pembukaan_rek" class="form-control form-control-lg mb-3" type="date"
-                                value="{{$getRequest->pembukaan_rek}}">
+                                value="{{$data->pembukaan_rek}}">
                         </div>
 
                         <div class="col-md-6">
 
                             <label for="penutupan_rek">Penutupan open recruitment</label>
                             <input name="penutupan_rek" class="form-control form-control-lg mb-3" type="date"
-                            value="{{$getRequest->penutupan_rek}}">
+                            value="{{$data->penutupan_rek}}">
                         </div>
 
                     </div>
@@ -48,7 +48,7 @@
 
                     <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
                     <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
-                    value="{{$getRequest->pihak_bertanggungjwb}}">
+                    value="{{$data->pihak_bertanggungjwb}}">
 
                     <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                         <i class="material-icons">file_copy</i> Update Data</button>

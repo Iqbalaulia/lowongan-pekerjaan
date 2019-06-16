@@ -80,7 +80,6 @@
         </div>
     </div>
     {!! $data->links() !!}
-
 </div>
 
 @endsection

@@ -73,8 +73,9 @@ class RequestpengajuanController extends Controller
      */
     public function edit($id)
     {
-        $getRequest = Requestpengajuan::find($id);
-        return view('requestpengajuan.edit',['getRequest'=>$getRequest]);
+        $data = Requestpengajuan::findOrFail($id);
+        return view('requestpengajuan.edit', compact('data'));
+
     }
 
     /**
@@ -86,14 +87,16 @@ class RequestpengajuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $updateRequest  = Requestpengajuan::find($id);
-        $updateRequest->divisi    =   $request->divisi;
-        $updateRequest->sebab_pengajuan   =   $request->sebab_pengajuan;
-        $updateRequest->jumlah    =   $request->jumlah;
-        $updateRequest->pembukaan_rek =   $request->pembukaan_rek;
-        $updateRequest->penutupan_rek =   $request->penutupan_rek;
-        $updateRequest->pihak_bertanggungjwb =   $request->pihak_bertanggungjwb;
-        $updateRequest->save();
+        $form_data = array(
+            'divisi'                => $request->divisi,
+            'sebab_pengajuan'       => $request->sebab_pengajuan,
+            'jumlah'                => $request->jumlah,
+            'pembukaan_rek'         => $request->pembukaan_rek,
+            'penutupan_rek'         => $request->penutupan_rek,
+            'pihak_bertanggungjwb'  => $request->pihak_bertanggungjwb
+        );
+        Requestpengajuan::whereId($id)->update($form_data);
+
         return redirect('requestpengajuan');
     }
 
@@ -105,7 +108,7 @@ class RequestpengajuanController extends Controller
      */
     public function destroy($id)
     {
-        $deleteRequest = Requestpengajuan::find($id);
+        $data = Requestpengajuan::findOrFail($id);
         $deleteRequest->delete();
         return redirect()->route('requestpengajuan.index');
     }
