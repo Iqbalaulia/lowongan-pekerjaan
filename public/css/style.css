@@ -27,3 +27,8 @@
 float: right;
 width: 33%;    
 }
+
+.table-white{
+    padding: 1%;
+    border-radius: 6px;
+}

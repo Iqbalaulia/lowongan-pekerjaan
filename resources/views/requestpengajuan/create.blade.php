@@ -21,7 +21,7 @@
                     <label for="sebab_pengajuan">Sebab pengajuan</label>
                     <textarea name="sebab_pengajuan" type="text" class="form-control form-control-lg mb-3"></textarea>
                     <label for="jumlah">Jumlah yang dibutuhkan</label>
-                    <input name="jumlah" class="form-control form-control-lg mb-3" type="text"
+                    <input name="jumlah" class="form-control form-control-lg mb-3" type="number"
                         placeholder="Your Post Title">
 
 

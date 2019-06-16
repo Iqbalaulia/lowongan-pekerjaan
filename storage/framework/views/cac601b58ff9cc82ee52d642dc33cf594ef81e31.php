@@ -17,11 +17,12 @@
         </tr>
     </thead>
     <tbody>
+    <?php $__currentLoopData = $suratlamaran; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lamaran): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?php echo e($lamaran->nama_lengkap); ?></td>
+            <td><?php echo e($lamaran->keahlian); ?></td>
+            <td><?php echo e($lamaran->linkedin); ?></td>
+            <td><?php echo e($lamaran->divisi_lamaran); ?></td>
             <td></td>
             <td width="15%">
                 <div class="action">
@@ -39,6 +40,7 @@
                 </div>
             </td>
         </tr>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </tbody>
     <tfoot>
         <tr>

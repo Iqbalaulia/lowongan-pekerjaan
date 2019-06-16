@@ -13,7 +13,7 @@ class CreateRequestpengajuanTable extends Migration
      */
     public function up()
     {
-        Schema::create('requestpengajuan', function (Blueprint $table) {
+        Schema::create('requestpengajuans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('divisi');
             $table->string('sebab_pengajuan');

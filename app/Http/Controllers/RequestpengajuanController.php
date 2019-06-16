@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Requestpengajuan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input; 
 class RequestpengajuanController extends Controller
 {
     /**
@@ -18,8 +17,9 @@ class RequestpengajuanController extends Controller
     }
     public function index()
     {
-        $requestpengajuan_show = Requestpengajuan::all();
-        return view('requestpengajuan.index',['requestpengajuan_show'=>$requestpengajuan_show]);
+        $data = Requestpengajuan::latest()->paginate(5);
+        return view('requestpengajuan.index', compact('data'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -41,15 +41,17 @@ class RequestpengajuanController extends Controller
     public function store(Request $request)
     {
         
-        $postRequest = new\App\Requestpengajuan();
-        $postRequest->divisi    =   $request->divisi;
-        $postRequest->sebab_pengajuan   =   $request->sebab_pengajuan;
-        $postRequest->jumlah    =   $request->jumlah;
-        $postRequest->pembukaan_rek =   $request->pembukaan_rek;
-        $postRequest->penutupan_rek =   $request->penutupan_rek;
-        $postRequest->pihak_bertanggungjwb =   $request->pihak_bertanggungjwb;
-        $postRequest->save();
-        return redirect('requestpengajuan');
+        $form_data = array(
+            'divisi'                => $request->divisi,
+            'sebab_pengajuan'       => $request->sebab_pengajuan,
+            'jumlah'                => $request->jumlah,
+            'pembukaan_rek'         => $request->pembukaan_rek,
+            'penutupan_rek'         => $request->penutupan_rek,
+            'pihak_bertanggungjwb'  => $request->pihak_bertanggungjwb
+        );
+
+        Requestpengajuan::create($form_data);
+        return redirect('requestpengajuan')->with('success','Data berhasil ditambahkan');
     }
 
     /**
