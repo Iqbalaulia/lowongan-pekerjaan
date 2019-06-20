@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Pelamar;
+use App\BackupPelamar;
+use App\Suratlamaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input; 
 use Illuminate\Support\Facades\Storage;
@@ -58,6 +60,8 @@ class PelamarController extends Controller
         );
 
         Pelamar::create($form_data);
+        BackupPelamar::create($form_data);
+        Suratlamaran::create($form_data);
         return view('pelamar.create');
        
     }

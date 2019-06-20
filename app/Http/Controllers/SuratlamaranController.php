@@ -19,8 +19,9 @@ class SuratlamaranController extends Controller
     }
     public function index()
     {
-        $suratlamaran = Suratlamaran::all();
-        return view('suratlamaran.index',['suratlamaran'=>$suratlamaran]);
+        $data = Suratlamaran::latest()->paginate(5);
+        return view('suratlamaran.index', compact('data'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

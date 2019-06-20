@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Suratlamaran extends Model
+class BackupPelamar extends Model
 {
     protected $fillable = [
         'nama_lengkap',
@@ -15,5 +15,4 @@ class Suratlamaran extends Model
         'divisi_lamaran',
         'files'  
       ];
-    
 }

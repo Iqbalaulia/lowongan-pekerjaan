@@ -11,20 +11,21 @@
         <tr>
             <th>Nama Pelamar</th>
             <th>Keahlian</th>
-            <th>link Portofolio</th>
+            <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-    @foreach ($suratlamaran as $lamaran)
+    @foreach ($data as $lamaran)
         <tr>
             <td>{{$lamaran->nama_lengkap}}</td>
             <td>{{$lamaran->keahlian}}</td>
-            <td>{{$lamaran->linkedin}}</td>
+            <td><a href="{{$lamaran->linkedin}}" target="_blank" >{{$lamaran->linkedin}}</a></td>
             <td>{{$lamaran->divisi_lamaran}}</td>
-            <td></td>
+            <td><a href="{{ URL::to('/') }}/curiculumVitae/{{ $lamaran->files }}" class="img-thumbnail"
+                width="75"  target="_blank" >{{ $lamaran->files }}</td>
             <td width="15%">
                 <div class="action">
                     <ul>
@@ -47,7 +48,7 @@
         <tr>
         <th>Nama Pelamar</th>
             <th>Keahlian</th>
-            <th>link Portofolio</th>
+            <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>

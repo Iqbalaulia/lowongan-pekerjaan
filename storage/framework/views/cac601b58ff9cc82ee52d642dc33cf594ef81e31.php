@@ -10,20 +10,21 @@
         <tr>
             <th>Nama Pelamar</th>
             <th>Keahlian</th>
-            <th>link Portofolio</th>
+            <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-    <?php $__currentLoopData = $suratlamaran; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lamaran): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lamaran): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
             <td><?php echo e($lamaran->nama_lengkap); ?></td>
             <td><?php echo e($lamaran->keahlian); ?></td>
-            <td><?php echo e($lamaran->linkedin); ?></td>
+            <td><a href="<?php echo e($lamaran->linkedin); ?>" target="_blank" ><?php echo e($lamaran->linkedin); ?></a></td>
             <td><?php echo e($lamaran->divisi_lamaran); ?></td>
-            <td></td>
+            <td><a href="<?php echo e(URL::to('/')); ?>/curiculumVitae/<?php echo e($lamaran->files); ?>" class="img-thumbnail"
+                width="75"  target="_blank" ><?php echo e($lamaran->files); ?></td>
             <td width="15%">
                 <div class="action">
                     <ul>
@@ -46,7 +47,7 @@
         <tr>
         <th>Nama Pelamar</th>
             <th>Keahlian</th>
-            <th>link Portofolio</th>
+            <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>
