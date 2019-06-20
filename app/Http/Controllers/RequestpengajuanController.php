@@ -47,7 +47,8 @@ class RequestpengajuanController extends Controller
             'sebab_pengajuan' => 'required',      
             'jumlah'          => 'required',
             'pembukaan_rek'   => 'required',      
-            'penutupan_rek'   => 'required',      
+            'penutupan_rek'   => 'required', 
+            'gaji'            => 'required',     
             'pihak_bertanggungjwb' =>'required'
         ]);
 
@@ -62,6 +63,7 @@ class RequestpengajuanController extends Controller
             'jumlah'                => $request->jumlah,
             'pembukaan_rek'         => $request->pembukaan_rek,
             'penutupan_rek'         => $request->penutupan_rek,
+            'gaji'                  => $request->gaji,
             'pihak_bertanggungjwb'  => $request->pihak_bertanggungjwb
         );
 

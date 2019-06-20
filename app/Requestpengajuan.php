@@ -13,6 +13,8 @@ class Requestpengajuan extends Model
         'jumlah',
         'pembukaan_rek',
         'penutupan_rek',
-        'pihak_bertanggungjwb'
+        'gaji',
+        'pihak_bertanggungjwb',
+        'status'
     ];
 }

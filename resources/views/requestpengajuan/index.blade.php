@@ -35,11 +35,13 @@
                     <tr>
                         <th>Thumbnail</th>
                         <th>Divisi</th>
-                        <th>Jumlah yang dibutuhkan</th>
-                        <th>Sebab pengajuan</th>
+                        <th>Jumlah Anggota</th>
                         <th>Pembukaan</th>
                         <th>Penutupan</th>
-                        <th>Pihak bertanggung jawab</th>
+                        <th>Gaji / Karyawan</th>
+                        <th>Penyelia</th>
+                        <th>Sebab pengajuan</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -49,12 +51,13 @@
                         <td><img src="{{ URL::to('/') }}/images/{{ $show_data->image }}" class="img-thumbnail"
                                 width="75" /></td>
                         <td>{{$show_data->divisi}}</td>
-                        <td>{{$show_data->jumlah}}</td>
-                        <td>{{$show_data->sebab_pengajuan}}</td>
+                        <td>{{$show_data->jumlah}} Orang</td>
                         <td>{{$show_data->pembukaan_rek}}</td>
                         <td>{{$show_data->penutupan_rek}}</td>
+                        <td>{{$show_data->gaji }}</td>
                         <td>{{$show_data->pihak_bertanggungjwb}}</td>
-
+                        <td>{{$show_data->sebab_pengajuan}}</td>
+                        <td>{{ $show_data->status }}</td>
                         <td width="15%">
                             <div class="action">
                                 <ul>
@@ -83,11 +86,13 @@
                     <tr>
                         <th>Thumbnail</th>
                         <th>Divisi</th>
-                        <th>Jumlah yang dibutuhkan</th>
-                        <th>Sebab pengajuan</th>
+                        <th>Jumlah Anggota</th>
                         <th>Pembukaan</th>
                         <th>Penutupan</th>
-                        <th>Pihak bertanggung jawab</th>
+                        <th>Gaji / Karyawan</th>
+                        <th>Penyelia</th>
+                        <th>Sebab pengajuan</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>

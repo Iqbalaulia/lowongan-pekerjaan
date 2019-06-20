@@ -41,6 +41,7 @@ class PelamarController extends Controller
     {
         $request->validate([
             'file'     => 'required|file|max:4048',
+            'image'     => 'required|image|max:4048',
             'nama_lengkap'    => 'required',    
             'divisi_lamaran'   => 'required'      
         ]);
@@ -49,7 +50,13 @@ class PelamarController extends Controller
         $new_name = rand() . '.' . $files->getClientOriginalExtension();
         $files->move(public_path('curiculumVitae'), $new_name);
         
+
+        $image = $request->file('image');
+        $foto_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('foto'), $foto_name);
+        
         $form_data = array(
+            'image'         => $foto_name,
             'files'         =>   $new_name,
             'nama_lengkap'  =>  $request->nama_lengkap,
             'keahlian'      =>  $request->keahlian,

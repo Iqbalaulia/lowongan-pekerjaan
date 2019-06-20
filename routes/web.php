@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 
 Route::resource('accpengajuan','AccpengajuanController');
-Route::resource('hasiltest','HasiltestController');
+Route::resource('hasil-test','HasiltestController');
 Route::resource('requestpengajuan','RequestpengajuanController');
 Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
+// Route::resource('test-programming','')
 Route::resource('file', 'FileController');
 
 Auth::routes();

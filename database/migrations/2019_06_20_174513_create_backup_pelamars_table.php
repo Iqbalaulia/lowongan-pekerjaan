@@ -15,6 +15,7 @@ class CreateBackupPelamarsTable extends Migration
     {
         Schema::create('backup_pelamars', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image')->nullable();
             $table->string('nama_lengkap');
             $table->string('keahlian');
             $table->string('linkedin');

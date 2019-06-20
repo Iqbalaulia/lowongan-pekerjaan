@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Suratlamaran;
+use App\BackupPelamar;
 use App\File;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class SuratlamaranController extends Controller
     public function index()
     {
         $data = Suratlamaran::latest()->paginate(5);
-        return view('suratlamaran.index', compact('data'))
+        $backup = BackupPelamar::latest()->paginate(5);
+        return view('suratlamaran.index', compact('data','backup'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -15,6 +15,7 @@ class CreateSuratlamaransTable extends Migration
     {
         Schema::create('suratlamarans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image')->nullable();
             $table->string('nama_lengkap');
             $table->string('keahlian');
             $table->string('linkedin');

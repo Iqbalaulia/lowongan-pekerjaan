@@ -37,18 +37,24 @@
 
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
                             <label for="pembukaan_rek">Jangka waktu open recruitment</label>
                             <input name="pembukaan_rek" class="form-control form-control-lg mb-3" type="date"
                                 placeholder="Your Post Title">
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
 
                             <label for="penutupan_rek">Penutupan open recruitment</label>
                             <input name="penutupan_rek" class="form-control form-control-lg mb-3" type="date"
                                 placeholder="Your Post Title">
+                        </div>
+                        <div class="col-md-4">
+
+                            <label for="gaji">Gaji</label>
+                            <input name="gaji" class="form-control form-control-lg mb-3" type="number"
+                                placeholder="Gaji Karyawan">
                         </div>
 
                     </div>

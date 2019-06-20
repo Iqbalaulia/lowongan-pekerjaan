@@ -21,7 +21,9 @@ class CreateRequestpengajuanTable extends Migration
             $table->string('jumlah');
             $table->string('pembukaan_rek');
             $table->string('penutupan_rek');
+            $table->string('gaji');
             $table->string('pihak_bertanggungjwb');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

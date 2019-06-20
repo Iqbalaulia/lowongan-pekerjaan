@@ -64,7 +64,7 @@
             
             
               <li class="nav-item">
-                <a class="nav-link " href="<?php echo e(route('hasiltest.index')); ?>">
+                <a class="nav-link " href="<?php echo e(route('hasil-test.index')); ?>">
                 <!-- before -->
                 
 

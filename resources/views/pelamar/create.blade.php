@@ -31,7 +31,7 @@
 
                             <label for="nama_lengkap">Nama Lengkap</label>
                             <input name="nama_lengkap" class="form-control form-control-lg mb-3" type="text"
-                                placeholder="Masukan divisi yang hendak melakukan pembukaan pekerjaan">
+                                placeholder="Nama Lengkap">
                             <label for="keahlian">Keahlian</label>
                             <textarea name="keahlian" type="text" class="form-control form-control-lg mb-3"></textarea>
 
@@ -53,16 +53,32 @@
 
                             <label for="divisi_lamaran">Divisi Lamaran</label>
                             <input name="divisi_lamaran" class="form-control form-control-lg mb-3" type="text"
-                                placeholder="Your Post Title">
+                                placeholder="Divisi Lamaran">
 
-                            <label for="file">Curiculum Vitae</label>
-                            <br />
-                            <input type="file" name="file" />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="file">Curiculum Vitae</label>
+                                    <br />
+                                    <input type="file" name="file" />
+                                    <br />
+                                    <br />
+                                    <p>*File berupa .pdf</p>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="image">Foto Profil</label>
+                                    <br />
+                                    <input type="file" name="image" />
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                             
+
+                            
 
                             <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                                 <i class="material-icons">file_copy</i> Daftarkan</button>
-
-
 
                     </div>
 
