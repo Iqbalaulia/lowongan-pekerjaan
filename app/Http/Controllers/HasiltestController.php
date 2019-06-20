@@ -19,7 +19,10 @@ class HasiltestController extends Controller
     }
     public function index()
     {
-        return view('hasiltest.index');
+        $data = Hasiltest::latest()->paginate(5);
+        return view('hasiltest.index', compact('data'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        
     }
 
     /**
@@ -29,7 +32,7 @@ class HasiltestController extends Controller
      */
     public function create()
     {
-        //
+        return view('hasiltest.create');
     }
 
     /**
@@ -40,7 +43,15 @@ class HasiltestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = array(
+            'nama_pelamar'                 => $request->nama_pelamar,
+            'hasil'                => $request->hasil,
+            'posisi'       => $request->posisi,
+           
+        );
+
+        Hasiltest::create($form_data);
+        return redirect('hasil-test')->with('success','Data berhasil ditambahkan');
     }
 
     /**
