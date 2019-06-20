@@ -12,8 +12,8 @@ class Pelamar extends Model
       'linkedin',
       'github',
       'gitlab',
-      'divisi_lamaran'
-    //   'files'  
+      'divisi_lamaran',
+      'files'  
     ];
     
 }

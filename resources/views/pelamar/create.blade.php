@@ -25,7 +25,8 @@
                 <!-- Add New Post Form -->
                 <div class="card card-small mb-3">
                     <div class="card-body">
-                        <form class="kt-form kt-form--label-right" action="{{url('pelamar')}}" method="POST" enctype="multipart/form-data">
+                        <form class="kt-form kt-form--label-right" action="{{url('pelamar')}}" method="POST"
+                            enctype="multipart/form-data">
                             {{csrf_field()}}
 
                             <label for="nama_lengkap">Nama Lengkap</label>
@@ -33,8 +34,8 @@
                                 placeholder="Masukan divisi yang hendak melakukan pembukaan pekerjaan">
                             <label for="keahlian">Keahlian</label>
                             <textarea name="keahlian" type="text" class="form-control form-control-lg mb-3"></textarea>
-                           
-                           
+
+
                             <label for="linkedin">LinkedIn</label>
                             <input name="linkedin" class="form-control form-control-lg mb-3" type="text"
                                 placeholder="Url your Linkedin">
@@ -49,15 +50,19 @@
                             <input name="gitlab" class="form-control form-control-lg mb-3" type="text"
                                 placeholder="Url your Gitlab">
 
-                          
+
                             <label for="divisi_lamaran">Divisi Lamaran</label>
                             <input name="divisi_lamaran" class="form-control form-control-lg mb-3" type="text"
                                 placeholder="Your Post Title">
 
+                            <label for="file">Curiculum Vitae</label>
+                            <br />
+                            <input type="file" name="file" />
+
                             <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                                 <i class="material-icons">file_copy</i> Daftarkan</button>
-                                
-                               
+
+
 
                     </div>
 
