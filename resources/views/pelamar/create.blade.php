@@ -25,7 +25,7 @@
                 <!-- Add New Post Form -->
                 <div class="card card-small mb-3">
                     <div class="card-body">
-                        <form class="kt-form kt-form--label-right" action="{{url('pelamar')}}" method="POST">
+                        <form class="kt-form kt-form--label-right" action="{{url('pelamar')}}" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
 
                             <label for="nama_lengkap">Nama Lengkap</label>

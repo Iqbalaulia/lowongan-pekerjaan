@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Suratlamaran extends Model
 {
-    protected $table = 'pelamar';
+    protected $table = 'pelamars';
     protected $gruarderd=['id'];
 
     

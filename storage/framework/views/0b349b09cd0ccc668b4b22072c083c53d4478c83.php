@@ -6,12 +6,23 @@
     </div>
 </div>
 
+<?php if($errors->any()): ?>
+<div class="alert alert-danger">
+    <ul>
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <li><?php echo e($error); ?></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </ul>
+</div>
+<?php endif; ?>
+
 <div class="row">
     <div class="col-lg-12 col-md-12">
         <!-- Add New Post Form -->
         <div class="card card-small mb-3">
             <div class="card-body">
-                <form class="kt-form kt-form--label-right" action="<?php echo e(url('requestpengajuan')); ?>" method="POST">
+                <form class="kt-form kt-form--label-right" action="<?php echo e(url('requestpengajuan')); ?>" method="POST"
+                    enctype="multipart/form-data">
                     <?php echo e(csrf_field()); ?>
 
 
@@ -26,7 +37,6 @@
 
 
                     <div class="row">
-
                         <div class="col-md-6">
 
                             <label for="pembukaan_rek">Jangka waktu open recruitment</label>
@@ -43,10 +53,17 @@
 
                     </div>
 
+                    
+                        <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
+                        <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
+                            placeholder="Your Post Title">
+                    
 
-                    <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
-                    <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
-                        placeholder="Your Post Title">
+                    
+                        <label for="image">Thumbnail</label>
+                        <br/>
+                        <input type="file" name="image" />
+                    
 
                     <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                         <i class="material-icons">file_copy</i> Publish</button>

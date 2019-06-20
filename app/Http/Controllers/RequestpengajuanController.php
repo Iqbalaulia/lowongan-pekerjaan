@@ -40,8 +40,23 @@ class RequestpengajuanController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
+        $request->validate([
+            'image'     => 'required|image|max:2048',
+            'divisi'    => 'required',
+            'sebab_pengajuan' => 'required',      
+            'jumlah'          => 'required',
+            'pembukaan_rek'   => 'required',      
+            'penutupan_rek'   => 'required',      
+            'pihak_bertanggungjwb' =>'required'
+        ]);
+
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+
         $form_data = array(
+            'image'                 => $new_name,
             'divisi'                => $request->divisi,
             'sebab_pengajuan'       => $request->sebab_pengajuan,
             'jumlah'                => $request->jumlah,
@@ -87,7 +102,13 @@ class RequestpengajuanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        $image_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $image_name);
+        
         $form_data = array(
+            'image'                 => $image_name,
             'divisi'                => $request->divisi,
             'sebab_pengajuan'       => $request->sebab_pengajuan,
             'jumlah'                => $request->jumlah,
@@ -96,7 +117,6 @@ class RequestpengajuanController extends Controller
             'pihak_bertanggungjwb'  => $request->pihak_bertanggungjwb
         );
         Requestpengajuan::whereId($id)->update($form_data);
-
         return redirect('requestpengajuan');
     }
 

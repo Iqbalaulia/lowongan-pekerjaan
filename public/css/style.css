@@ -32,3 +32,12 @@ width: 33%;
     padding: 1%;
     border-radius: 6px;
 }
+
+.alert{
+    border-radius: 6px;
+}
+
+.alert h4{
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

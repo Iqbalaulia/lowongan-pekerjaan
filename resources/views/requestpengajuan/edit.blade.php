@@ -13,15 +13,17 @@
         <!-- Add New Post Form -->
         <div class="card card-small mb-3">
             <div class="card-body">
-                <form class="kt-form kt-form--label-right" action="{{route('requestpengajuan.update',[$data->id])}}" method="POST">
+                <form class="kt-form kt-form--label-right" action="{{route('requestpengajuan.update',[$data->id])}}"
+                    method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
-                    {{ method_field('PUT') }} 
+                    {{ method_field('PUT') }}
 
                     <label for="divisi">Divisi</label>
                     <input name="divisi" class="form-control form-control-lg mb-3" type="text"
-                       value="{{$data->divisi}}">
+                        value="{{$data->divisi}}">
                     <label for="sebab_pengajuan">Sebab pengajuan</label>
-                    <textarea name="sebab_pengajuan" type="text" class="form-control form-control-lg mb-3">{{$data->sebab_pengajuan}}</textarea>
+                    <textarea name="sebab_pengajuan" type="text"
+                        class="form-control form-control-lg mb-3">{{$data->sebab_pengajuan}}</textarea>
                     <label for="jumlah">Jumlah yang dibutuhkan</label>
                     <input name="jumlah" class="form-control form-control-lg mb-3" type="text"
                         value="{{$data->jumlah}}">
@@ -40,7 +42,7 @@
 
                             <label for="penutupan_rek">Penutupan open recruitment</label>
                             <input name="penutupan_rek" class="form-control form-control-lg mb-3" type="date"
-                            value="{{$data->penutupan_rek}}">
+                                value="{{$data->penutupan_rek}}">
                         </div>
 
                     </div>
@@ -48,7 +50,15 @@
 
                     <label for="pihak_bertanggungjwb">Pihak bertanggung jawab</label>
                     <input name="pihak_bertanggungjwb" class="form-control form-control-lg mb-3" type="text"
-                    value="{{$data->pihak_bertanggungjwb}}">
+                        value="{{$data->pihak_bertanggungjwb}}">
+                    
+                    {{--  --}}
+                    <label for="image">Thumbnail</label>
+                    <br />
+                    <input type="file" name="image" />
+                    <img src="{{ URL::to('/') }}/images/{{ $data->image }}" class="img-thumbnail" width="100" />
+                    <input type="hidden" name="hidden_image" value="{{ $data->image }}" />
+                    {{--  --}}
 
                     <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                         <i class="material-icons">file_copy</i> Update Data</button>

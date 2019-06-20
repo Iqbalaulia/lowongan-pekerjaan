@@ -37,17 +37,18 @@ class PelamarController extends Controller
      */
     public function store(Request $request)
     {
-        $postPelamar = new\App\Pelamar();
-        $postPelamar->nama_lengkap    =   $request->nama_lengkap;
-        $postPelamar->keahlian  =   $request->keahlian;
-        $postPelamar->linkedin  =   $request->linkedin;
-        $postPelamar->github    =   $request->github;
-        $postPelamar->gitlab    =   $request->gitlab;
-        $postPelamar->divisi_lamaran    = $request->divisi_lamaran;
-        
+        $form_data = array(
+            'nama_lengkap'  =>  $request->nama_lengkap,
+            'keahlian'      =>  $request->keahlian,
+            'linkedin'      =>  $request->linkedin,
+            'github'        =>  $request->github,
+            'gitlab'        =>  $request->gitlab,
+            'divisi_lamaran'=>  $request->divisi_lamaran
+        );
+
+        Pelamar::create($form_data);
+        return view('pelamar.create');
        
-        $postPelamar->save();
-        return view('pelamar.upload');
     }
 
     /**

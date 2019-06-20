@@ -15,6 +15,7 @@ class CreateRequestpengajuanTable extends Migration
     {
         Schema::create('requestpengajuans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image')->nullable();
             $table->string('divisi');
             $table->string('sebab_pengajuan');
             $table->string('jumlah');

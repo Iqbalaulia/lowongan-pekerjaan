@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Requestpengajuan extends Model
 {
     protected $fillable=[
+        'image',
         'divisi',
         'sebab_pengajuan',
         'jumlah',

@@ -5,6 +5,13 @@
         <h3 class="page-title">Request pengajuan</h3>
     </div>
 </div>
+
+<?php if($message = Session::get('success')): ?>
+<div class="alert alert-success" role="alert">
+    <h4><?php echo e($message); ?></h4>
+</div>
+<?php endif; ?>
+
 <div class="table-white bg-white">
     <div class="row">
         <div class="col-md-8">
@@ -14,9 +21,10 @@
             <div class="button-box mt-2">
 
                 <a href="<?php echo e(route('requestpengajuan.create')); ?>" class="btn btn-success">
-                        <img src="https://img.icons8.com/wired/25/000000/plus.png"> Tambah data</a>
+                    <img src="https://img.icons8.com/wired/25/000000/plus.png"> Tambah data</a>
             </div>
         </div>
+
     </div>
     <hr>
     <div class="row">
@@ -24,10 +32,10 @@
             <table id="accpengajuan" class="table table-striped table-bordered bg-white" style="width:100%">
                 <thead>
                     <tr>
+                        <th>Thumbnail</th>
                         <th>Divisi</th>
                         <th>Jumlah yang dibutuhkan</th>
                         <th>Sebab pengajuan</th>
-
                         <th>Pembukaan</th>
                         <th>Penutupan</th>
                         <th>Pihak bertanggung jawab</th>
@@ -37,6 +45,8 @@
                 <tbody>
                     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $show_data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
+                        <td><img src="<?php echo e(URL::to('/')); ?>/images/<?php echo e($show_data->image); ?>" class="img-thumbnail"
+                                width="75" /></td>
                         <td><?php echo e($show_data->divisi); ?></td>
                         <td><?php echo e($show_data->jumlah); ?></td>
                         <td><?php echo e($show_data->sebab_pengajuan); ?></td>
@@ -49,7 +59,7 @@
                                 <ul>
                                     <li><a href="<?php echo e(route('requestpengajuan.edit',[$show_data->id])); ?>"
                                             class="btn btn-primary">
-                                            <img src="https://img.icons8.com/wired/15/000000/edit.png"> 
+                                            <img src="https://img.icons8.com/wired/15/000000/edit.png">
                                             Edit</a></li>
                                     <li>
 
@@ -58,8 +68,8 @@
                                             <input type="hidden" name="_method" value="Delete">
                                             <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                             <button type="submit" class="btn btn-danger">
-                                                    <img src="https://img.icons8.com/wired/15/000000/trash.png">
-                                                    Delete</button>
+                                                <img src="https://img.icons8.com/wired/15/000000/trash.png">
+                                                Delete</button>
                                         </form>
                                     </li>
                                 </ul>
@@ -70,10 +80,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
+                        <th>Thumbnail</th>
                         <th>Divisi</th>
                         <th>Jumlah yang dibutuhkan</th>
                         <th>Sebab pengajuan</th>
-
                         <th>Pembukaan</th>
                         <th>Penutupan</th>
                         <th>Pihak bertanggung jawab</th>

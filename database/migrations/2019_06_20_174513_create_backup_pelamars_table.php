@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePelamarTable extends Migration
+class CreateBackupPelamarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePelamarTable extends Migration
      */
     public function up()
     {
-        Schema::create('pelamars', function (Blueprint $table) {
+        Schema::create('backup_pelamars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_lengkap');
             $table->string('keahlian');
@@ -33,6 +33,6 @@ class CreatePelamarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelamar');
+        Schema::dropIfExists('backup_pelamars');
     }
 }
