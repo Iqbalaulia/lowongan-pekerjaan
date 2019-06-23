@@ -79,13 +79,13 @@
                     enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{ method_field('PUT') }}
-
-                    <button type="submit" name="setuju" class="btn btn-success">
-                        <input name="status" value="setuju" type="hidden">
+                    
+                    <button type="submit" name="status" class="btn btn-success">
+                        <input name="status" value="Disetujui" type="hidden">
                         Disetujui
                     </button>
                     <button type="submit" name="status" class="btn btn-danger">
-                        <input name="status" value="tidak" type="hidden">
+                        <input name="status" value="Tidak Disetujui" type="hidden">
                         Tidak Disetujui
                     </button>
                 </form>

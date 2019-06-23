@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Accpengajuan;
+use App\Requestpengajuan;
 use Illuminate\Http\Request;
 
 class AccpengajuanController extends Controller
@@ -18,7 +19,8 @@ class AccpengajuanController extends Controller
     }
     public function index()
     {
-        return view('accpengajuan.index');
+        $data = Requestpengajuan::latest()->paginate(5);
+        return view('accpengajuan.index', compact('data'));
     }
 
     /**

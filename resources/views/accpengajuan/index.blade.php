@@ -7,53 +7,28 @@
     </div>
 </div>
 <div class="row">
+    @foreach ($data as $data_pengajuan)
     <div class="col-lg-6 col-sm-12 mb-4">
         <div class="card card-small card-post card-post--aside card-post--1">
-            <div class="card-post__image" style="background-image: url('images/content-management/5.jpeg');">
-                <a href="#" class="card-post__category badge badge-pill badge-success">Disetujui</a>
-                <div class="card-post__author d-flex">
-                    <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
-                        style="background-image: url('images/avatars/0.jpg');">Written by Anna Ken</a>
-                </div>
-            </div>
+           
             <div class="card-body">
+                <img src="{{ URL::to('/') }}/images/{{ $data_pengajuan->image }}" class="img-thumbnail" width="100%" />
+                <hr>
                 <h5 class="card-title">
-                    <a class="text-fiord-blue" href="#">Attention he extremity unwilling on otherwise cars backwards
-                        yet</a>
+                    <a class="text-fiord-blue" href="#">Pengajuan persetujuan untuk penambahan anggota
+                        {{$data_pengajuan->divisi  }}</a>
                 </h5>
-                <p class="card-text d-inline-block mb-3">Conviction up partiality as delightful is discovered. Yet
-                    jennings resolved disposed exertion you off. Left did fond drew fat head poor jet pan flying over...
+                <p class="card-text d-inline-block mb-3">
+                    {{ $data_pengajuan->sebab_pengajuan }}
                 </p>
-                <span class="text-muted">29 February 2019</span>
-                <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
-                    <i class="material-icons">pageview
-                    </i> View</button>
+                <span class="text-muted">{{ $data_pengajuan->updated_at->format('d, M Y') }}</span>
+                <h4 class="text-right">{{ $data_pengajuan->status }}</h4>
             </div>
         </div>
+
+
     </div>
-    <div class="col-lg-6 col-sm-12 mb-4">
-        <div class="card card-small card-post card-post--aside card-post--1">
-            <div class="card-post__image" style="background-image: url('images/content-management/6.jpeg');">
-                <a href="#" class="card-post__category badge badge-pill badge-danger">Tidak Disetujui</a>
-                <div class="card-post__author d-flex">
-                    <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
-                        style="background-image: url('images/avatars/1.jpg');">Written by Jamie James</a>
-                </div>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a class="text-fiord-blue" href="#">Totally words widow one downs few age every seven if miss part
-                        by fact</a>
-                </h5>
-                <p class="card-text d-inline-block mb-3">Discovered had get considered projection who favourable.
-                    Necessary up knowledge it tolerably. Unwilling departure education to admitted speaking...</p>
-                <span class="text-muted">29 February 2019</span>
-                <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
-                    <i class="material-icons">pageview
-                    </i> View</button>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 
 @endsection
