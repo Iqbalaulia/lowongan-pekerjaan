@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Auth::routes();
+
+
 
 Route::resource('accpengajuan','AccpengajuanController');
 Route::resource('hasil-test','HasiltestController');
@@ -21,7 +24,6 @@ Route::resource('requestpengajuan','RequestpengajuanController');
 Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
 Route::resource('file', 'FileController');
-
-Auth::routes();
+Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
 
 Route::get('/home', 'HomeController@index')->name('home');
