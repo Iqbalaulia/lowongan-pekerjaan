@@ -39,7 +39,8 @@ class PersetujuanPengajuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
     }
 
     /**
@@ -62,7 +63,7 @@ class PersetujuanPengajuanController extends Controller
      */
     public function edit(PersetujuanPengajuan $persetujuanPengajuan)
     {
-        //
+        
     }
 
     /**
@@ -72,9 +73,13 @@ class PersetujuanPengajuanController extends Controller
      * @param  \App\PersetujuanPengajuan  $persetujuanPengajuan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PersetujuanPengajuan $persetujuanPengajuan)
+    public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+            'status'    =>  $request->status
+        );
+        Requestpengajuan::whereId($id)->update($form_data);
+        return redirect('persetujuan_pengajuan')->with('success','Data berhasil ditambahkan');
     }
 
     /**

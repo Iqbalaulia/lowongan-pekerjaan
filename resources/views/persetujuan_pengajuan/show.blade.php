@@ -32,10 +32,10 @@
                     disabled>
             </div>
             <div class="col-md-6">
-                    <label for="">Tanggal Pengajuan</label>
-                    <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->created_at->format('d, M Y') }}"
-                        disabled>
-                </div>
+                <label for="">Tanggal Pengajuan</label>
+                <input type="text" class="form-control form-control-lg mb-3"
+                    value="{{ $data->created_at->format('d, M Y') }}" disabled>
+            </div>
 
         </div>
 
@@ -68,8 +68,29 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="">Sebab Pengajuan</label>
-                <textarea name="" id="" cols="30" rows="10" class="form-control form-control-lg mb-3">{{ $data->sebab_pengajuan }}</textarea>
+                <textarea name="" id="" cols="30" rows="10"
+                    class="form-control form-control-lg mb-3">{{ $data->sebab_pengajuan }}</textarea>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="right">
+                <form action="{{route('persetujuan_pengajuan.update',[$data->id])}}" method="post"
+                    enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    {{ method_field('PUT') }}
+
+                    <button type="submit" name="setuju" class="btn btn-success">
+                        <input name="status" value="setuju" type="hidden">
+                        Disetujui
+                    </button>
+                    <button type="submit" name="status" class="btn btn-danger">
+                        <input name="status" value="tidak" type="hidden">
+                        Tidak Disetujui
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 
