@@ -41,3 +41,19 @@ width: 33%;
     color: #000000;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.title{
+    font-size: 2vw;
+    color: #000000;
+    font-weight: bold;
+    
+}
+.information{
+    /* border-color: #000000;
+    border-style: solid; */
+    padding: 1%;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}

@@ -43,8 +43,9 @@
                   <span>Request Pengajuan</span>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a class="nav-link " href="<?php echo e(route('accpengajuan.index')); ?>">
+                <a class="nav-link " href="<?php echo e(route('persetujuan_pengajuan.index')); ?>">
                 <!-- before -->
                 
 
@@ -52,6 +53,17 @@
                   <span>Persetujuan Pengajuan</span>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="<?php echo e(route('accpengajuan.index')); ?>">
+                <!-- before -->
+                
+
+                  <i class="material-icons">vertical_split</i>
+                  <span>Hasil Pengajuan</span>
+                </a>
+              </li>
+              
               <li class="nav-item">
                 <a class="nav-link " href="<?php echo e(route('suratlamaran.index')); ?>">
                 <!-- before -->

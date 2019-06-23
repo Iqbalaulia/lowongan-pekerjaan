@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\PersetujuanPengajuan;
 use Illuminate\Http\Request;
+use App\Requestpengajuan;
 
 class PersetujuanPengajuanController extends Controller
 {
@@ -14,8 +15,11 @@ class PersetujuanPengajuanController extends Controller
      */
     public function index()
     {
-        //
+        $data = Requestpengajuan::latest()->paginate(5);
+        return view('persetujuan_pengajuan.index', compact('data'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +48,10 @@ class PersetujuanPengajuanController extends Controller
      * @param  \App\PersetujuanPengajuan  $persetujuanPengajuan
      * @return \Illuminate\Http\Response
      */
-    public function show(PersetujuanPengajuan $persetujuanPengajuan)
+    public function show($id)
     {
-        //
+        $data = Requestpengajuan::findOrFail($id);
+        return view('persetujuan_pengajuan.show',compact('data'));
     }
 
     /**
