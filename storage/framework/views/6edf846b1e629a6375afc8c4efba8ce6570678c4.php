@@ -49,7 +49,7 @@
                 
 
                   <i class="material-icons">vertical_split</i>
-                  <span>Pengajuan Disetujui</span>
+                  <span>Persetujuan Pengajuan</span>
                 </a>
               </li>
               <li class="nav-item">

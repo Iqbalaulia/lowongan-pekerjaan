@@ -23,6 +23,8 @@ class CreatePelamarTable extends Migration
             $table->string('gitlab');
             $table->string('divisi_lamaran');
             $table->string('files')->nullable();
+            $table->string('status_test_satu')->nullable();
+            $table->string('status_test_dua')->nullable();
             $table->timestamps();
         });
     }
