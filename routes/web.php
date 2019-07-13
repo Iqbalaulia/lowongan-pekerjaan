@@ -25,5 +25,4 @@ Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
 Route::resource('file', 'FileController');
 Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
-
 Route::get('/home', 'HomeController@index')->name('home');
