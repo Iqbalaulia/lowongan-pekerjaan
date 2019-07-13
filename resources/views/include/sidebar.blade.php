@@ -72,10 +72,10 @@
       @else
       {{--  --}}
       <li class="nav-item">
-        <a class="nav-link " href="{{route('persetujuan_pengajuan.index')}}">
+        <a class="nav-link " href="{{route('requestpengajuan.index')}}">
           <!-- before -->
           <i class="material-icons">vertical_split</i>
-          <span>Persetujuan Pengajuan</span>
+          <span>Request Pengajuan</span>
         </a>
       </li>
       <li class="nav-item">
