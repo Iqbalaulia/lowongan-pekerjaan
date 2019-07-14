@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hasiltest;
 use Illuminate\Http\Request;
+use App\Suratlamaran;
 
 class HasiltestController extends Controller
 {
@@ -19,10 +20,10 @@ class HasiltestController extends Controller
     }
     public function index()
     {
-        $data = Hasiltest::latest()->paginate(5);
-        return view('hasiltest.index', compact('data'))
+        $data = Suratlamaran::latest()->paginate(5);
+        return view('hasiltest.index', compact('data','backup'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
-        
+
     }
 
     /**
@@ -60,9 +61,10 @@ class HasiltestController extends Controller
      * @param  \App\Hasiltest  $hasiltest
      * @return \Illuminate\Http\Response
      */
-    public function show(Hasiltest $hasiltest)
+    public function show($id)
     {
-        //
+        $data = Suratlamaran::findOrFail($id);
+        return view('hasiltest.show',compact('data'));
     }
 
     /**

@@ -6,63 +6,75 @@
     </div>
 </div>
 
-<div class="row">
-        <div class="col-md-8">
-
-        </div>
-        <div class="col-md-4">
-            <div class="button-box mt-2">
-
-                    <a href="<?php echo e(route('hasil-test.create')); ?>" class="btn btn-success">
-                    <img src="https://img.icons8.com/wired/25/000000/plus.png"> Tambah data</a>
-            </div>
-        </div>
-
-    </div>
-    <br/>
 <table id="accpengajuan" class="table table-striped table-bordered bg-white" style="width:100%">
     <thead>
         <tr>
-            <th>Nama Pelamar</th>
-            <th>Hasil Test</th>
-            <th>Posisi</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Github</th>
+            <th>Gitlab</th>
+            <th>Linkedin</th>
+            
+            <th>Divisi</th>   
+            <th>Berkas Lamaran</th>
+            <th>Email</th>
+            <th>Test Dokumen</th>
+            <th>Test Coding</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-            <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hasil_test): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
+        <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lamaran): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <td><?php echo e($hasil_test->nama_pelamar); ?></td>
-            <td><?php echo e($hasil_test->hasil); ?></td>
-            <td><?php echo e($hasil_test->posisi); ?></td>
+            <td><img src="<?php echo e(URL::to('/')); ?>/foto/<?php echo e($lamaran->image); ?>" class="img-thumbnail" width="75" /></td>
+            <td><?php echo e($lamaran->nama_lengkap); ?></td>
+            <td><a href="<?php echo e($lamaran->github); ?>" target="_blank"><?php echo e($lamaran->github); ?></a></td>
+            <td><a href="<?php echo e($lamaran->gitlab); ?>" target="_blank"><?php echo e($lamaran->gitlab); ?></a></td>
+            <td><a href="<?php echo e($lamaran->linkedin); ?>" target="_blank"><?php echo e($lamaran->linkedin); ?></a></td>
+            <td><?php echo e($lamaran->divisi_lamaran); ?></td>
+            <td><a href="<?php echo e(URL::to('/')); ?>/curiculumVitae/<?php echo e($lamaran->files); ?>" class="img-thumbnail" width="75"
+                    target="_blank"><?php echo e($lamaran->files); ?></td>
+                    <td><?php echo e($lamaran->email); ?></td>
+            <td><?php echo e($lamaran->status_test_satu); ?></td>
+            <td><?php echo e($lamaran->status_test_dua); ?></td>
             <td width="15%">
                 <div class="action">
+                   <div class="row">
                     <ul>
-                        <li><a href="" class="btn btn-success">Terima</a></li>
-                        <li>
-                        
-                            <form action="" method="POST">
-                                <input type="hidden" name="_method" value="Delete">
-                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                                <input type="submit" class="btn btn-danger" value="Tolak">
-                            </form>
+                        <li><a href="<?php echo e(route('hasil-test.show',$lamaran->id)); ?>" class="btn btn-primary">View</a>
                         </li>
+                        <li>
+                            <a style="width:100%" href="" class="btn btn-success">Diterima</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo e(url('email-ditolak')); ?>" class="btn btn-danger">Ditolak</a>
+                            
+                        </li>
+                      
                     </ul>
+                   </div>
                 </div>
             </td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
     </tbody>
     <tfoot>
         <tr>
-        <th>Nama Pelamar</th>
-            <th>Hasil Test</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Github</th>
+            <th>Gitlab</th>
+            <th>Linkedin</th>
+            <th>Divisi</th>
+            <th>Berkas Lamaran</th>
+            <th>Email</th>
+            <th>Test Dokumen</th>
+            <th>Test Coding</th>
             <th>Action</th>
         </tr>
     </tfoot>
 </table>
+
 
 <?php $__env->stopSection(); ?>
 
