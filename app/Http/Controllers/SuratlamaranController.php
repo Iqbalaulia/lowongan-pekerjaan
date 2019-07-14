@@ -21,7 +21,7 @@ class SuratlamaranController extends Controller
     public function index()
     {
         $data = Suratlamaran::latest()->paginate(5);
-        $backup = BackupPelamar::latest()->paginate(5);
+        $backup = BackupPelamar::where('status_test_dua','=','Ditolak')->latest()->paginate(5);
         return view('suratlamaran.index', compact('data','backup'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
