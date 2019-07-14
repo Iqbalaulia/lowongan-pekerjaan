@@ -29,12 +29,15 @@ Route::resource('email-berkas-diterima','EmailBerkasController');
 Route::resource('email-berkas-ditolak','EmailBerkasDitolakController');
 Route::resource('email-test-diterima','EmailTestDiterimaController');
 Route::resource('email-test-ditolak','EmailTestDitolakController');
+Route::resource('email-panggilan','EmailPanggilanController');
+
 Route::resource('dashboard','DashboardController');
 
 Route::post('send/email-berkas-diterima','EmailBerkasController@sendmail');
 Route::post('send/email-berkas-ditolak','EmailBerkasDitolakController@sendmail');
 Route::post('send/email-test-diterima','EmailTestDiterimaController@sendmail');
 Route::post('send/email-test-ditolak','EmailTestDitolakController@sendmail');
+Route::post('send/email-panggilan','EmailPanggilanController@sendmail');
 
 // Route::get('email-berkas-ditolak','EmailBerkasController@index');
 // Route::get('email-berkas-diterima','EmailBerkasController@index');

@@ -91,8 +91,8 @@
             <th>Github</th>
             <th>Gitlab</th>
             <th>Linkedin</th>
-            <th>Keahlian</th>
             <th>Divisi</th>
+            <th>Status</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
@@ -106,13 +106,13 @@
             <td><a href="<?php echo e($lamaran->gitlab); ?>" target="_blank"><?php echo e($lamaran->gitlab); ?></a></td>
             <td><a href="<?php echo e($lamaran->linkedin); ?>" target="_blank"><?php echo e($lamaran->linkedin); ?></a></td>
             <td><?php echo e($lamaran->keahlian); ?></td>
-            <td><?php echo e($lamaran->divisi_lamaran); ?></td>
+            <td><?php echo e($lamaran->status_test_dua); ?></td>
             <td><a href="<?php echo e(URL::to('/')); ?>/curiculumVitae/<?php echo e($lamaran->files); ?>" class="img-thumbnail" width="75"
                     target="_blank"><?php echo e($lamaran->files); ?></td>
             <td width="15%">
                 <div class="action">
                     <ul>
-                        <li><a href="" class="btn btn-primary">View</a></li>
+                        <li><a href="<?php echo e(route('email-panggilan.show',$lamaran->id)); ?>" class="btn btn-success">Panggilan</a></li>
 
                     </ul>
                 </div>
@@ -122,15 +122,15 @@
     </tbody>
     <tfoot>
         <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Github</th>
-            <th>Gitlab</th>
-            <th>Linkedin</th>
-            <th>Keahlian</th>
-            <th>Divisi</th>
-            <th>Berkas Lamaran</th>
-            <th>Action</th>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Github</th>
+                <th>Gitlab</th>
+                <th>Linkedin</th>
+                <th>Divisi</th>
+                <th>Status</th>
+                <th>Berkas Lamaran</th>
+                <th>Action</th>
         </tr>
     </tfoot>
 </table>

@@ -92,8 +92,8 @@
             <th>Github</th>
             <th>Gitlab</th>
             <th>Linkedin</th>
-            <th>Keahlian</th>
             <th>Divisi</th>
+            <th>Status</th>
             <th>Berkas Lamaran</th>
             <th>Action</th>
         </tr>
@@ -107,13 +107,13 @@
             <td><a href="{{$lamaran->gitlab}}" target="_blank">{{$lamaran->gitlab}}</a></td>
             <td><a href="{{$lamaran->linkedin}}" target="_blank">{{$lamaran->linkedin}}</a></td>
             <td>{{$lamaran->keahlian}}</td>
-            <td>{{$lamaran->divisi_lamaran}}</td>
+            <td>{{$lamaran->status_test_dua}}</td>
             <td><a href="{{ URL::to('/') }}/curiculumVitae/{{ $lamaran->files }}" class="img-thumbnail" width="75"
                     target="_blank">{{ $lamaran->files }}</td>
             <td width="15%">
                 <div class="action">
                     <ul>
-                        <li><a href="" class="btn btn-primary">View</a></li>
+                        <li><a href="{{ route('email-panggilan.show',$lamaran->id) }}" class="btn btn-success">Panggilan</a></li>
 
                     </ul>
                 </div>
@@ -123,15 +123,15 @@
     </tbody>
     <tfoot>
         <tr>
-            <th>Foto</th>
-            <th>Nama</th>
-            <th>Github</th>
-            <th>Gitlab</th>
-            <th>Linkedin</th>
-            <th>Keahlian</th>
-            <th>Divisi</th>
-            <th>Berkas Lamaran</th>
-            <th>Action</th>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>Github</th>
+                <th>Gitlab</th>
+                <th>Linkedin</th>
+                <th>Divisi</th>
+                <th>Status</th>
+                <th>Berkas Lamaran</th>
+                <th>Action</th>
         </tr>
     </tfoot>
 </table>
