@@ -34,13 +34,7 @@
         </a>
       </li>
       @if(auth()->user()->isAdmin == 1)
-      <li class="nav-item">
-        <a class="nav-link " href="{{route('requestpengajuan.index')}}">
-          <!-- before -->
-          <i class="material-icons">vertical_split</i>
-          <span>Request Pengajuan</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link " href="{{route('persetujuan_pengajuan.index')}}">
           <!-- before -->
@@ -55,20 +49,7 @@
           <span>Hasil Pengajuan</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{{route('suratlamaran.index')}}">
-          <!-- before -->
-          <i class="material-icons">note_add</i>
-          <span>Surat Lamaran</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{{route('hasil-test.index')}}">
-          <!-- before -->
-          <i class="material-icons">person</i>
-          <span>Hasil Test</span>
-        </a>
-      </li>
+     
       @else
       {{--  --}}
       <li class="nav-item">
