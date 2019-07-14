@@ -53,9 +53,10 @@ class SuratlamaranController extends Controller
      * @param  \App\Suratlamaran  $suratlamaran
      * @return \Illuminate\Http\Response
      */
-    public function show(Suratlamaran $suratlamaran)
+    public function show($id)
     {
-        //
+        $data = Suratlamaran::findOrFail($id);
+        return view('suratlamaran.show',compact('data'));
     }
 
     /**
@@ -76,9 +77,15 @@ class SuratlamaranController extends Controller
      * @param  \App\Suratlamaran  $suratlamaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Suratlamaran $suratlamaran)
+    public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+            'status_test_satu'    =>  $request->status_test_satu
+        );
+        // dd($form_data);
+        BackupPelamar::whereId($id)->update($form_data);
+        Suratlamaran::whereId($id)->update($form_data);
+        return redirect('suratlamaran')->with('success','Data berhasil ditambahkan');
     }
 
     /**
