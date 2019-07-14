@@ -8,7 +8,7 @@
                 <div class="card-header bg-primary text-white">Lamaran Diterima</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('send/email') }}">
+                    <form method="POST" action="{{ url('send/email-berkas-diterima') }}">
                         @csrf
                         
                         @if (Session::has("success"))

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Suratlamaran;
+use Mail;
+use Session;
+use App\Mail\SendEmail;
 
 class EmailBerkasController extends Controller
 {
@@ -15,6 +18,23 @@ class EmailBerkasController extends Controller
     public function index()
     {
         return view('suratlamaran.sendmail_terima');
+    }
+
+    public function sendmail(Request $request){
+
+        $this->validate($request,[
+            "email" =>  "required",
+            "subject"   =>  "required",
+            "message"   =>  "required"
+        ]);
+
+        $email      =   $request->email;
+        $subject    =   $request->subject;
+        $message    =   $request->message;
+
+        Mail::to($email)->send(new SendEmail($subject,$message));
+        Session::flash("success");
+        return back();
     }
 
     /**

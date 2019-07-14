@@ -28,7 +28,7 @@ Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
 Route::resource('email-berkas-diterima','EmailBerkasController');
 Route::resource('email-berkas-ditolak','EmailBerkasDitolakController');
 
-// Route::post('send/email','SuratlamaranController@sendmail');
+Route::post('send/email-berkas-diterima','EmailBerkasController@sendmail');
 
 // Route::get('email-berkas-ditolak','EmailBerkasController@index');
 // Route::get('email-berkas-diterima','EmailBerkasController@index');
