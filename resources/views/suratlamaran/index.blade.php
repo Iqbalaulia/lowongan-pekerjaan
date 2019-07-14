@@ -44,10 +44,10 @@
                         <li><a href="{{ route('suratlamaran.show',$lamaran->id) }}" class="btn btn-primary">View</a>
                         </li>
                         <li>
-                            <a style="width:100%" href="{{ url('email-berkas-diterima') }}" class="btn btn-success">Diterima</a>
+                            <a style="width:100%" href="{{ route('email-berkas-diterima.show',$lamaran->id) }}" class="btn btn-success">Diterima</a>
                         </li>
                         <li>
-                            <a href="{{ url('email-berkas-ditolak') }}" class="btn btn-danger">Ditolak</a>
+                            <a href="{{ route('email-berkas-ditolak.show',$lamaran->id) }}" class="btn btn-danger">Ditolak</a>
                             
                         </li>
                       

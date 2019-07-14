@@ -25,14 +25,15 @@ Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
 Route::resource('file', 'FileController');
 Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
+Route::resource('email-berkas-diterima','EmailBerkasController');
+Route::resource('email-berkas-ditolak','EmailBerkasDitolakController');
 
+// Route::post('send/email','SuratlamaranController@sendmail');
 
-Route::post('send/email','SuratlamaranController@sendmail');
+// Route::get('email-berkas-ditolak','EmailBerkasController@index');
+// Route::get('email-berkas-diterima','EmailBerkasController@index');
 
-Route::get('email-berkas-ditolak','SuratlamaranController@mailHomeTolak');
-Route::get('email-berkas-diterima','SuratlamaranController@mailHomeTerima');
-
-Route::get('email-hasil-test-ditolak','HasiltestController@mailHomeTolak');
-Route::get('email-hasil-test-diterima','HasiltestController@mailHomeTerima');
+// Route::get('email-hasil-test-ditolak','HasiltestController@mailHomeTolak');
+// Route::get('email-hasil-test-diterima','HasiltestController@mailHomeTerima');
 
 Route::get('/home', 'HomeController@index')->name('home');
