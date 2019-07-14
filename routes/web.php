@@ -29,6 +29,7 @@ Route::resource('email-berkas-diterima','EmailBerkasController');
 Route::resource('email-berkas-ditolak','EmailBerkasDitolakController');
 Route::resource('email-test-diterima','EmailTestDiterimaController');
 Route::resource('email-test-ditolak','EmailTestDitolakController');
+Route::resource('dashboard','DashboardController');
 
 Route::post('send/email-berkas-diterima','EmailBerkasController@sendmail');
 Route::post('send/email-berkas-ditolak','EmailBerkasDitolakController@sendmail');
