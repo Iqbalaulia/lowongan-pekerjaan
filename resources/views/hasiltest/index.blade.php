@@ -45,10 +45,10 @@
                         <li><a href="{{ route('hasil-test.show',$lamaran->id) }}" class="btn btn-primary">View</a>
                         </li>
                         <li>
-                            <a style="width:100%" href="" class="btn btn-success">Diterima</a>
+                            <a style="width:100%" href="{{ url('email-hasil-test-diterima') }}" class="btn btn-success">Diterima</a>
                         </li>
                         <li>
-                            <a href="{{ url('email-ditolak') }}" class="btn btn-danger">Ditolak</a>
+                            <a href="{{ url('email-hasil-test-ditolak') }}" class="btn btn-danger">Ditolak</a>
                             
                         </li>
                       

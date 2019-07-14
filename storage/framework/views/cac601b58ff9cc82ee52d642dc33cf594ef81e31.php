@@ -43,10 +43,10 @@
                         <li><a href="<?php echo e(route('suratlamaran.show',$lamaran->id)); ?>" class="btn btn-primary">View</a>
                         </li>
                         <li>
-                            <a style="width:100%" href="" class="btn btn-success">Diterima</a>
+                            <a style="width:100%" href="<?php echo e(url('email-berkas-diterima')); ?>" class="btn btn-success">Diterima</a>
                         </li>
                         <li>
-                            <a href="<?php echo e(url('email-ditolak')); ?>" class="btn btn-danger">Ditolak</a>
+                            <a href="<?php echo e(url('email-berkas-ditolak')); ?>" class="btn btn-danger">Ditolak</a>
                             
                         </li>
                       

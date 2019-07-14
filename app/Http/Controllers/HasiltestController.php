@@ -106,4 +106,11 @@ class HasiltestController extends Controller
     {
         //
     }
+    public function mailHomeTolak(Request $request){
+        return view('hasiltest.sendmail_tolak');
+    }
+
+    public function mailHomeTerima(Request $request){
+        return view('hasiltest.sendmail_terima');
+    }
 }

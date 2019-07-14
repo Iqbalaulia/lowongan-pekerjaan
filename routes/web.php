@@ -28,6 +28,11 @@ Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
 
 
 Route::post('send/email','SuratlamaranController@sendmail');
-Route::get('email-ditolak','SuratlamaranController@mailHome');
+
+Route::get('email-berkas-ditolak','SuratlamaranController@mailHomeTolak');
+Route::get('email-berkas-diterima','SuratlamaranController@mailHomeTerima');
+
+Route::get('email-hasil-test-ditolak','HasiltestController@mailHomeTolak');
+Route::get('email-hasil-test-diterima','HasiltestController@mailHomeTerima');
 
 Route::get('/home', 'HomeController@index')->name('home');
