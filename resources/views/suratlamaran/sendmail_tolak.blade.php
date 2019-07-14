@@ -37,7 +37,7 @@
                             <label for="message" class="col-md-4 col-form-label text-md-right">Message</label>
 
                             <div class="col-md-6">
-                                <textarea class="form-control" name="message" id="" cols="30" rows="5">Mohon maaf anda tidak diterima, jangan berkecil hati ya . Tetap tegar dan perbanya portofiliomu. Ada kemungkinan kami akan memanggilmu lagi next project !
+                                <textarea class="form-control" name="message" id="" cols="30" rows="5">Mohon maaf anda tidak diterima, jangan berkecil hati ya . Tetap tegar dan perbanyak portofiliomu. Ada kemungkinan kami akan memanggilmu lagi next project !
                                                          </textarea>
                             </div>
                         </div>

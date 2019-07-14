@@ -47,7 +47,7 @@
                             <a style="width:100%" href="<?php echo e(route('email-test-diterima.show',$lamaran->id)); ?>" class="btn btn-success">Diterima</a>
                         </li>
                         <li>
-                            <a href="<?php echo e(url('email-hasil-test-ditolak')); ?>" class="btn btn-danger">Ditolak</a>
+                            <a href="<?php echo e(route('email-test-ditolak.show',$lamaran->id)); ?>" class="btn btn-danger">Ditolak</a>
                             
                         </li>
                       

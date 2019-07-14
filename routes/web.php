@@ -28,10 +28,12 @@ Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
 Route::resource('email-berkas-diterima','EmailBerkasController');
 Route::resource('email-berkas-ditolak','EmailBerkasDitolakController');
 Route::resource('email-test-diterima','EmailTestDiterimaController');
+Route::resource('email-test-ditolak','EmailTestDitolakController');
 
 Route::post('send/email-berkas-diterima','EmailBerkasController@sendmail');
 Route::post('send/email-berkas-ditolak','EmailBerkasDitolakController@sendmail');
 Route::post('send/email-test-diterima','EmailTestDiterimaController@sendmail');
+Route::post('send/email-test-ditolak','EmailTestDitolakController@sendmail');
 
 // Route::get('email-berkas-ditolak','EmailBerkasController@index');
 // Route::get('email-berkas-diterima','EmailBerkasController@index');
