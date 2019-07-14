@@ -98,4 +98,8 @@ class SuratlamaranController extends Controller
     {
         //
     }
+
+    public function mailHome(Request $request){
+        return view('suratlamaran.sendmail_tolak');
+    }
 }

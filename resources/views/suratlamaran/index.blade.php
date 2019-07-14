@@ -38,17 +38,20 @@
             <td></td>
             <td width="15%">
                 <div class="action">
+                   <div class="row">
                     <ul>
                         <li><a href="{{ route('suratlamaran.show',$lamaran->id) }}" class="btn btn-primary">View</a>
                         </li>
                         <li>
-                            <a href="" class="btn btn-danger">Ditolak</a>
-                            
-                        </li>
-                        <li>
                             <a style="width:100%" href="" class="btn btn-success">Diterima</a>
                         </li>
+                        <li>
+                            <a href="{{ url('email-ditolak') }}" class="btn btn-danger">Ditolak</a>
+                            
+                        </li>
+                      
                     </ul>
+                   </div>
                 </div>
             </td>
         </tr>

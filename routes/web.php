@@ -25,4 +25,9 @@ Route::resource('suratlamaran','SuratlamaranController');
 Route::resource('pelamar','PelamarController');
 Route::resource('file', 'FileController');
 Route::resource('persetujuan_pengajuan','PersetujuanPengajuanController');
+
+
+Route::post('send/email','SuratlamaranController@sendmail');
+Route::get('email-ditolak','SuratlamaranController@mailHome');
+
 Route::get('/home', 'HomeController@index')->name('home');
