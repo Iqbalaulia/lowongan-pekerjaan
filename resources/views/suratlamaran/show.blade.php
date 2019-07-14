@@ -89,31 +89,32 @@
             </div>
         </div>
 
+        <div class="row">
+
+                <div class="col-md-12">
+                    <label for="">Konfirmasi</label>
+                </div>
+        
+                <div class="col-md-12" align="right">
+                    <form action="{{route('suratlamaran.update',[$data->id])}}" method="post"
+                        enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{ method_field('PUT') }}
+                        <div class="form-group">
+                            <select class="form-control" id="sel1" name="status_test_satu">
+                                <option value="Diterima">Diterima</option>
+                                <option value="Ditolak">Ditolak</option>
+                            </select>
+                        </div>
+        
+                        <button type="submit" class="btn btn-primary" style="height:40px; width:10%;">Publish</button>
+                    </form>
+                </div>
+        
+            </div>
+
     </div>
 
-
-
-    <div class="row">
-        <div class="col-md-12" align="right">
-            <form action="{{route('suratlamaran.update',[$data->id])}}" method="post" enctype="multipart/form-data">
-                {{csrf_field()}}
-                {{ method_field('PUT') }}
-
-                <button type="submit" name="status_test_satu" class="btn btn-success">
-                    <input name="status_test_satu" value="Diterima" type="hidden">
-                    Diterima
-                </button>
-                <button type="submit" name="status_test_satu" class="btn btn-danger">
-                    <input name="status_test_satu" value="Ditolak" type="hidden">
-                    Ditolak
-                </button>
-            </form>
-        </div>
-
-    </div>
 </div>
-
-
-
-</div>
+<br>
 @endsection
