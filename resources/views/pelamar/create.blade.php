@@ -55,6 +55,10 @@
                             <input name="divisi_lamaran" class="form-control form-control-lg mb-3" type="text"
                                 placeholder="Divisi Lamaran">
 
+                            <label for="email">Email</label>
+                            <input name="email" class="form-control form-control-lg mb-3" type="text"
+                                placeholder="Email Aktif">
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="file">Curiculum Vitae</label>
@@ -73,9 +77,9 @@
                                     <br />
                                 </div>
                             </div>
-                             
 
-                            
+
+
 
                             <button type="submit" class="btn btn-sm btn-accent ml-auto float-right">
                                 <i class="material-icons">file_copy</i> Daftarkan</button>

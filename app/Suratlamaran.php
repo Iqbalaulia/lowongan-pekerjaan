@@ -14,6 +14,7 @@ class Suratlamaran extends Model
         'github',
         'gitlab',
         'divisi_lamaran',
+        'email',
         'files'  
       ];
     

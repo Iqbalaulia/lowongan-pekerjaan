@@ -63,8 +63,10 @@ class PelamarController extends Controller
             'linkedin'      =>  $request->linkedin,
             'github'        =>  $request->github,
             'gitlab'        =>  $request->gitlab,
-            'divisi_lamaran'=>  $request->divisi_lamaran
+            'divisi_lamaran'=>  $request->divisi_lamaran,
+            'email'         =>  $request->email
         );
+        // dd($form_data);
 
         Pelamar::create($form_data);
         BackupPelamar::create($form_data);

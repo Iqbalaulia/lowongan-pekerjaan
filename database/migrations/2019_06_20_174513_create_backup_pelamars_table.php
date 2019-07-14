@@ -21,6 +21,7 @@ class CreateBackupPelamarsTable extends Migration
             $table->string('linkedin');
             $table->string('github');
             $table->string('gitlab');
+            $table->string('email');
             $table->string('divisi_lamaran');
             $table->string('files');
             $table->string('status_test_satu')->nullable();

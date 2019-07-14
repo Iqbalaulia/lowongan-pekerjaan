@@ -14,6 +14,7 @@ class BackupPelamar extends Model
         'github',
         'gitlab',
         'divisi_lamaran',
+        'email',
         'files'  
       ];
 }

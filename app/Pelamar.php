@@ -14,6 +14,7 @@ class Pelamar extends Model
       'github',
       'gitlab',
       'divisi_lamaran',
+      'email',
       'files'  
     ];
     
