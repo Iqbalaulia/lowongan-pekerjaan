@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Hasiltest;
 use Illuminate\Http\Request;
 use App\Suratlamaran;
-
+use App\BackupPelamar;
 class HasiltestController extends Controller
 {
     /**
@@ -85,9 +85,15 @@ class HasiltestController extends Controller
      * @param  \App\Hasiltest  $hasiltest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hasiltest $hasiltest)
+    public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+            'status_test_dua'    =>  $request->status_test_dua
+        );
+        // dd($form_data);
+        BackupPelamar::whereId($id)->update($form_data);
+        Suratlamaran::whereId($id)->update($form_data);
+        return redirect('hasil-test')->with('success','Data berhasil ditambahkan');
     }
 
     /**

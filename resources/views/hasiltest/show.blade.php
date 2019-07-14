@@ -70,25 +70,33 @@
 
         <div class="row">
             <div class="col-md-12">
-                <label for="">Test Administrasi</label>
+                <label for="">Berkas Administrasi</label>
                 <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->status_test_satu }}" disabled>
 
             </div>
         </div>
 
         <div class="row">
+            <div class="col-md-12">
+                <label for="">Test Coding</label>
+                <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->status_test_dua }}" disabled>
+
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-12" align="right">
-                <form action="{{route('suratlamaran.update',[$data->id])}}" method="post"
+                <form action="{{route('hasil-test.update',[$data->id])}}" method="post"
                     enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{ method_field('PUT') }}
                     
-                    <button type="submit" name="status_test_satu" class="btn btn-success">
-                        <input name="status_test_satu" value="Diterima" type="hidden">
+                    <button type="submit" name="status_test_dua" class="btn btn-success">
+                        <input name="status_test_dua" value="Diterima" type="hidden">
                         Diterima
                     </button>
-                    <button type="submit" name="status_test_satu" class="btn btn-danger">
-                        <input name="status_test_satu" value="Ditolak" type="hidden">
+                    <button type="submit" name="status_test_dua" class="btn btn-danger">
+                        <input name="status_test_dua" value="Ditolak" type="hidden">
                         Ditolak
                     </button>
                 </form>
@@ -96,8 +104,6 @@
 
         </div>
     </div>
-
-
-
+<br>
 </div>
 @endsection

@@ -35,28 +35,31 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="">Linkedin</label>
-                <h5>  <a target="_blank" href="{{ $data->linkedin }}">{{ $data->linkedin }}</a></h5>
-              
+                <h5> <a target="_blank" href="{{ $data->linkedin }}">{{ $data->linkedin }}</a></h5>
+
             </div>
             <div class="col-md-4">
                 <label for="">Github</label>
-                <h5>  <a target="_blank" href="{{ $data->github }}">{{ $data->github }}</a></h5>
+                <h5> <a target="_blank" href="{{ $data->github }}">{{ $data->github }}</a></h5>
             </div>
             <div class="col-md-4">
                 <label for="">Gitlab</label>
-                <h5>  <a target="_blank" href="{{ $data->gitlab }}">{{ $data->gitlab }}</a></h5>
+                <h5> <a target="_blank" href="{{ $data->gitlab }}">{{ $data->gitlab }}</a></h5>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-md-12">
                 <label for="">Divisi Lamaran</label>
-                <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->divisi_lamaran }}" disabled>
+                <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->divisi_lamaran }}"
+                    disabled>
             </div>
             <div class="col-md-6">
                 <label for="">Curiculum Vitae</label>
-                <a  href="{{ URL::to('/') }}/curiculumVitae/{{ $data->files }}" class="img-thumbnail"
-                    width="75"  target="_blank" ><p target="_blank">{{ $data->files }}</p></a>
+                <a href="{{ URL::to('/') }}/curiculumVitae/{{ $data->files }}" class="img-thumbnail" width="75"
+                    target="_blank">
+                    <p target="_blank">{{ $data->files }}</p>
+                </a>
             </div>
         </div>
 
@@ -68,26 +71,47 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12" align="right">
-                <form action="{{route('suratlamaran.update',[$data->id])}}" method="post"
-                    enctype="multipart/form-data">
-                    {{csrf_field()}}
-                    {{ method_field('PUT') }}
-                    
-                    <button type="submit" name="status_test_satu" class="btn btn-success">
-                        <input name="status_test_satu" value="Diterima" type="hidden">
-                        Diterima
-                    </button>
-                    <button type="submit" name="status_test_satu" class="btn btn-danger">
-                        <input name="status_test_satu" value="Ditolak" type="hidden">
-                        Ditolak
-                    </button>
-                </form>
-            </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <label for="">Berkas Administrasi</label>
+                <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->status_test_satu }}"
+                    disabled>
+
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label for="">Test Coding</label>
+                <input type="text" class="form-control form-control-lg mb-3" value="{{ $data->status_test_dua }}"
+                    disabled>
+            </div>
+        </div>
+
     </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12" align="right">
+            <form action="{{route('suratlamaran.update',[$data->id])}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                {{ method_field('PUT') }}
+
+                <button type="submit" name="status_test_satu" class="btn btn-success">
+                    <input name="status_test_satu" value="Diterima" type="hidden">
+                    Diterima
+                </button>
+                <button type="submit" name="status_test_satu" class="btn btn-danger">
+                    <input name="status_test_satu" value="Ditolak" type="hidden">
+                    Ditolak
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
 
 
 
