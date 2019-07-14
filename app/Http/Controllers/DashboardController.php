@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Suratlamaran;
 
 class DashboardController extends Controller
 {
@@ -13,7 +14,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        
+        $count_total_lamaran = Suratlamaran::count();
+        $count_total_diterima_administrasi = Suratlamaran::where('status_test_satu','=','Diterima')->count();
+        $count_total_diterima_coding = Suratlamaran::where('status_test_dua','=','Diterima')->count();
+        $data_diterima_kerja = Suratlamaran::where('status_test_satu','=','Diterima','AND','status_test_dua','=','Diterima')->count();
+        return view('dashboard.index',
+        compact('count_total_lamaran',
+        'count_total_diterima_administrasi',
+        'count_total_diterima_coding','data_diterima_kerja'));
 
     }
 
