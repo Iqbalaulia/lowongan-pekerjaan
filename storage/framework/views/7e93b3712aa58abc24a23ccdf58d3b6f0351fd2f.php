@@ -9,7 +9,7 @@
     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data_pengajuan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="col-lg-6 col-sm-12 mb-4">
         <div class="card card-small card-post card-post--aside card-post--1">
-           
+
             <div class="card-body">
                 <img src="<?php echo e(URL::to('/')); ?>/images/<?php echo e($data_pengajuan->image); ?>" class="img-thumbnail" width="100%" />
                 <hr>
@@ -22,7 +22,26 @@
 
                 </p>
                 <span class="text-muted"><?php echo e($data_pengajuan->updated_at->format('d, M Y')); ?></span>
-                <h4 class="text-right"><?php echo e($data_pengajuan->status); ?></h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <?php if($data_pengajuan->status == "Diterima"): ?>
+                        <div class="create-approved">
+                            <a href="" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                        </div>
+                        <?php else: ?>
+                        <div class="create-approved">
+                            <button disabled="disabled" class="btn btn-primary">Pembuatan Ditolak</button>
+                            
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="status">
+                            <h4 class="text-right"><?php echo e($data_pengajuan->status); ?></h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
