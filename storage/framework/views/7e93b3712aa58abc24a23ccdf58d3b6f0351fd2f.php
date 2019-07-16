@@ -26,13 +26,16 @@
                     <div class="col-md-6">
                         <?php if($data_pengajuan->status == "Diterima"): ?>
                         <div class="create-approved">
-                            <a href="" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                            <a href="<?php echo e(route('creatependaftaran.edit',$data_pengajuan->id)); ?>" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                        </div>
+                        <?php elseif($data_pengajuan->status == "Ditolak"): ?>
+                        <div class="create-approved">
+                            <button disabled="disabled" class="btn btn-danger">Pembuatan Ditolak</button> 
                         </div>
                         <?php else: ?>
                         <div class="create-approved">
-                            <button disabled="disabled" class="btn btn-primary">Pembuatan Ditolak</button>
-                            
-                        </div>
+                                <button disabled="disabled" class="btn btn-danger">Pembuatan Belum Di Approve</button> 
+                            </div>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-6">

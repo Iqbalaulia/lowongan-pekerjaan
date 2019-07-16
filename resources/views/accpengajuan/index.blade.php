@@ -26,13 +26,16 @@
                     <div class="col-md-6">
                         @if($data_pengajuan->status == "Diterima")
                         <div class="create-approved">
-                            <a href="" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                            <a href="{{ route('creatependaftaran.edit',$data_pengajuan->id) }}" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                        </div>
+                        @elseif($data_pengajuan->status == "Ditolak")
+                        <div class="create-approved">
+                            <button disabled="disabled" class="btn btn-danger">Pembuatan Ditolak</button> 
                         </div>
                         @else
                         <div class="create-approved">
-                            <button disabled="disabled" class="btn btn-primary">Pembuatan Ditolak</button>
-                            
-                        </div>
+                                <button disabled="disabled" class="btn btn-danger">Pembuatan Belum Di Approve</button> 
+                            </div>
                         @endif
                     </div>
                     <div class="col-md-6">
