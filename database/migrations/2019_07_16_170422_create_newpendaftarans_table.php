@@ -13,7 +13,7 @@ class CreateNewpendaftaransTable extends Migration
      */
     public function up()
     {
-        Schema::create('newpendaftarans', function (Blueprint $table) {
+        Schema::create('new_pendaftarans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image')->nullable();
             $table->string('divisi');

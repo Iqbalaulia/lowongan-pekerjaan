@@ -5,6 +5,13 @@
         <h3 class="page-title">Persetujuan pengajuan karyawan baru</h3>
     </div>
 </div>
+<?php if($message = Session::get('success')): ?>
+<div class="alert alert-success" role="alert">
+    <h4><?php echo e($message); ?></h4>
+</div>
+<?php endif; ?>
+
+
 <div class="row">
     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data_pengajuan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="col-lg-6 col-sm-12 mb-4">
@@ -26,7 +33,7 @@
                     <div class="col-md-6">
                         <?php if($data_pengajuan->status == "Diterima"): ?>
                         <div class="create-approved">
-                            <a href="<?php echo e(route('creatependaftaran.edit',$data_pengajuan->id)); ?>" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                            <a href="<?php echo e(route('creatependaftaran.show',$data_pengajuan->id)); ?>" class="btn btn-primary">Pembuatan Pendaftaran</a>
                         </div>
                         <?php elseif($data_pengajuan->status == "Ditolak"): ?>
                         <div class="create-approved">

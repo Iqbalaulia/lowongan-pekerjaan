@@ -6,6 +6,13 @@
         <h3 class="page-title">Persetujuan pengajuan karyawan baru</h3>
     </div>
 </div>
+@if($message = Session::get('success'))
+<div class="alert alert-success" role="alert">
+    <h4>{{ $message }}</h4>
+</div>
+@endif
+{{--  --}}
+
 <div class="row">
     @foreach ($data as $data_pengajuan)
     <div class="col-lg-6 col-sm-12 mb-4">
@@ -26,7 +33,7 @@
                     <div class="col-md-6">
                         @if($data_pengajuan->status == "Diterima")
                         <div class="create-approved">
-                            <a href="{{ route('creatependaftaran.edit',$data_pengajuan->id) }}" class="btn btn-primary">Pembuatan Pendaftaran</a>
+                            <a href="{{ route('creatependaftaran.show',$data_pengajuan->id) }}" class="btn btn-primary">Pembuatan Pendaftaran</a>
                         </div>
                         @elseif($data_pengajuan->status == "Ditolak")
                         <div class="create-approved">

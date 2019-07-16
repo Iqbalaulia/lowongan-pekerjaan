@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Requestpengajuan;
-
+use App\NewPendaftaran;
 class CreatePendaftaranController extends Controller
 {
     /**
@@ -14,6 +14,7 @@ class CreatePendaftaranController extends Controller
      */
     public function index()
     {
+        // return view('')
     }
 
     /**
@@ -34,7 +35,35 @@ class CreatePendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image'     => 'required|image|max:4048',
+            'divisi'    => 'required',
+            'sebab_pengajuan' => 'required',      
+            'jumlah'          => 'required',
+            'pembukaan_rek'   => 'required',      
+            'penutupan_rek'   => 'required', 
+            'gaji'            => 'required',     
+            'pihak_bertanggungjwb' =>'required'
+        ]);
+        
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('poster'), $new_name);
+        $status = "Telah dibuat";
+        $form_data = array(
+            'image'                 => $new_name,
+            'divisi'                => $request->divisi,
+            'sebab_pengajuan'       => $request->sebab_pengajuan,
+            'jumlah'                => $request->jumlah,
+            'pembukaan_rek'         => $request->pembukaan_rek,
+            'penutupan_rek'         => $request->penutupan_rek,
+            'gaji'                  => $request->gaji,
+            'status'                => $status,
+            'pihak_bertanggungjwb'  => $request->pihak_bertanggungjwb
+        );
+
+        NewPendaftaran::create($form_data);
+        return redirect('accpengajuan')->with('success','Form Pendaftaran Berhasil Dibuat');
     }
 
     /**
@@ -45,7 +74,8 @@ class CreatePendaftaranController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Requestpengajuan::findOrFail($id);
+        return view('create_pendaftaran.create', compact('data'));
     }
 
     /**
@@ -56,8 +86,7 @@ class CreatePendaftaranController extends Controller
      */
     public function edit($id)
     {
-        $data = Requestpengajuan::findOrFail($id);
-        return view('create_pendaftaran.create', compact('data'));
+        
     }
 
     /**
