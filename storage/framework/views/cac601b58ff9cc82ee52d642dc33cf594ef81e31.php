@@ -16,7 +16,6 @@
             
             <th>Divisi</th>   
             <th>Berkas Lamaran</th>
-            <th>Email</th>
             <th>Test Dokumen</th>
             <th>Test Coding</th>
             <th>Action</th>
@@ -33,7 +32,6 @@
             <td><?php echo e($lamaran->divisi_lamaran); ?></td>
             <td><a href="<?php echo e(URL::to('/')); ?>/curiculumVitae/<?php echo e($lamaran->files); ?>" class="img-thumbnail" width="75"
                     target="_blank"><?php echo e($lamaran->files); ?></td>
-                    <td><?php echo e($lamaran->email); ?></td>
             <td><?php echo e($lamaran->status_test_satu); ?></td>
             <td><?php echo e($lamaran->status_test_dua); ?></td>
             <td width="15%">
@@ -66,7 +64,6 @@
             <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
-            <th>Email</th>
             <th>Test Dokumen</th>
             <th>Test Coding</th>
             <th>Action</th>

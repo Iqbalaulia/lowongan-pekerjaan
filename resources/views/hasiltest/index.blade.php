@@ -18,7 +18,6 @@
             
             <th>Divisi</th>   
             <th>Berkas Lamaran</th>
-            <th>Email</th>
             <th>Test Dokumen</th>
             <th>Test Coding</th>
             <th>Action</th>
@@ -35,7 +34,6 @@
             <td>{{$lamaran->divisi_lamaran}}</td>
             <td><a href="{{ URL::to('/') }}/curiculumVitae/{{ $lamaran->files }}" class="img-thumbnail" width="75"
                     target="_blank">{{ $lamaran->files }}</td>
-                    <td>{{ $lamaran->email }}</td>
             <td>{{ $lamaran->status_test_satu }}</td>
             <td>{{ $lamaran->status_test_dua }}</td>
             <td width="15%">
@@ -68,7 +66,6 @@
             <th>Linkedin</th>
             <th>Divisi</th>
             <th>Berkas Lamaran</th>
-            <th>Email</th>
             <th>Test Dokumen</th>
             <th>Test Coding</th>
             <th>Action</th>
